@@ -38,6 +38,9 @@
       <HintPath>..\..\..\..\..\..\Documents\irrKlang-1.6.0\bin\dotnet-4\irrKlang.NET4.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SharpConfig, Version=3.2.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\sharpconfig.3.2.8\lib\net20\SharpConfig.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -58,8 +61,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+<<<<<<< HEAD
     <Compile Include="ControllerClass.cs" />
     <Compile Include="EngineClass.cs" />
+=======
+    <Compile Include="ProfileClass.cs" />
+>>>>>>> BackendProfilKlasse
     <Compile Include="SequencerClass.cs" />
     <Compile Include="Timer.cs" />
     <Compile Include="ViewModel.cs" />
@@ -94,6 +101,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -44,7 +44,12 @@ namespace CrystalBeats
             colSequences.Add(sqBar7);
             colSequences.Add(sqBar8);
 
+<<<<<<< HEAD
             // colSequences.CopyTo(sqSequences);
+=======
+            sqSequences = new 
+            colSequences.CopyTo(sqSequences);
+>>>>>>> Backend
         }
 
         public void Play()
@@ -69,6 +74,11 @@ namespace CrystalBeats
             sqBar6 = sqSequences[5];
             sqBar7 = sqSequences[6];
             sqBar8 = sqSequences[7];
+        }
+
+        public void PlaySound()
+        {
+            sqActiveSequence.PlaySound();
         }
     }
 
@@ -178,9 +188,15 @@ namespace CrystalBeats
 
             if (iPlayedBeats[iCounter - 1] != 0 && !bRested)
             {
+                sePlayer.StopAllSounds();
                 sePlayer.Play2D(strSoundslot);
             }
             iCounter++;
+        }
+
+        public void PlaySound()
+        {
+            sePlayer.Play2D(strSoundslot);
         }
 
         public int BeatsPerSequence

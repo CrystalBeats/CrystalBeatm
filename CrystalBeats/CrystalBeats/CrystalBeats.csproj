@@ -60,6 +60,7 @@
     </ApplicationDefinition>
     <Compile Include="ControllerClass.cs" />
     <Compile Include="EngineClass.cs" />
+    <Compile Include="KeyboardHook.cs" />
     <Compile Include="SequencerClass.cs" />
     <Compile Include="Timer.cs" />
     <Compile Include="ViewModel.cs" />

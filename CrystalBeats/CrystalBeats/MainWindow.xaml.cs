@@ -24,13 +24,10 @@ namespace CrystalBeats
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = new ViewModel();
         }
 
-        private void bt_Play_Click(object sender, RoutedEventArgs e)
-        {
-            Sequencer sequencer = new Sequencer();
-
-            sequencer.Play();
-        }
+        
     }
 }

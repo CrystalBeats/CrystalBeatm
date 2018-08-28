@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrystalBeats"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        WindowStyle="None" AllowsTransparency="True"
+        Title="MainWindow" Height="600" Width="1000">
     <Grid>
 
 
@@ -15,9 +16,9 @@
             <!-- Layout Grid for Header / Content / maybe Footer -->
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="42"/>
+                    <RowDefinition Height="22"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="21"/>
+                    <RowDefinition Height="0"/>
                 </Grid.RowDefinitions>
 
                 <!-- Header -->
@@ -31,21 +32,22 @@
 
                         <Grid.RowDefinitions>
                             <!-- Margin Border Top -->
-                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="0"/>
                             <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
+                            <RowDefinition Height="50"/>
                             <RowDefinition/>
                             <!-- Margin Border Bottom -->
-                            <RowDefinition Height="10"/>
+                            
                         </Grid.RowDefinitions>
 
                         <!-- Info -->
-                        <Border Grid.Row="1" Background="#B6B8BB" Grid.RowSpan="2">
+                        <Border Grid.Row="1" Background="#B6B8BB" 
+                                
+                                >
                             <Grid>
 
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                                    
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
@@ -60,15 +62,111 @@
                                         </Grid.RowDefinitions>
 
                                         <!-- Textblock -->
-                                        <Border VerticalAlignment="Center">
-                                            <StackPanel>
-                                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontStretch="UltraExpanded" FontSize="40">
-                                                    TESTTESTTESTe
-                                                </TextBlock>
-                                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontStretch="UltraExpanded" FontSize="40">
-                                                    TESTTESTTESTe
-                                                </TextBlock>
-                                            </StackPanel>
+                                        <Border>
+
+                                            <Border.BorderThickness>5</Border.BorderThickness>
+                                            <Border.BorderBrush>Black</Border.BorderBrush>
+                                     
+                                            <Grid>
+
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                </Grid.RowDefinitions>
+
+                                                <Border Grid.RowSpan="4" BorderBrush="Black" BorderThickness="1" Margin="5 5 5 10" Background="#3f6292">
+                                                    <Grid>
+
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="10"></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition Height="2*"></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition Height="10"></RowDefinition>
+                                                        </Grid.RowDefinitions>
+
+                                                        <Border Grid.Row="1" Margin="10 0" BorderBrush="Black" BorderThickness="1">
+                                                            <Grid ShowGridLines="False">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition></ColumnDefinition>
+                                                                    <ColumnDefinition></ColumnDefinition>
+                                                                    <ColumnDefinition></ColumnDefinition>
+                                                                    <ColumnDefinition></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+
+                                                                <TextBlock Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">AKT BPM </TextBlock>
+                                                                <TextBlock Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontStretch="Expanded" FontSize="35">NAME PROFIL + MAYBE TITLE</TextBlock>
+                                                                <TextBlock Grid.Column="3" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontStretch="Expanded" FontSize="35">TIME</TextBlock>
+                                                            </Grid>
+                                                        </Border>
+                                                        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1" Margin="10 0">
+                                                            <Grid ShowGridLines="True">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition></ColumnDefinition>
+                                                                    <ColumnDefinition></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                            </Grid>
+                                                        </Border>
+                                                        <Border Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="10 0">
+                                                            <Grid ShowGridLines="True">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition></ColumnDefinition>
+                                                                    <ColumnDefinition Width=".5*"></ColumnDefinition>
+                                                                    <ColumnDefinition></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+
+                                                                <Border>
+                                                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"> CRYSTAL BEATMACHINE</TextBlock>
+                                                                </Border>
+                                                                
+                                                                <Border Grid.Column="2" HorizontalAlignment="Center">
+                                                                    <StackPanel Orientation="Horizontal">
+                                                                        <TextBlock FontSize="23" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                                            <Run Foreground="Wheat">1</Run>
+                                                                            <Run>2</Run>
+                                                                            <Run>3</Run>
+                                                                            <Run>4</Run>
+                                                                            <Run Foreground="Wheat">5</Run>
+                                                                            <Run>6</Run>
+                                                                            <Run>7</Run>
+                                                                            <Run>8</Run>
+                                                                            <Run Foreground="Wheat">9</Run>
+                                                                            <Run>10</Run>
+                                                                            <Run>11</Run>
+                                                                            <Run>12</Run>
+                                                                            <Run Foreground="Wheat">13</Run>
+                                                                            <Run>14</Run>
+                                                                            <Run>15</Run>
+                                                                            <Run>16</Run>
+                                                                        </TextBlock>
+                                                                    </StackPanel>
+                                                                </Border>
+                                                            </Grid>
+                                                            
+                                                        </Border>
+                                                    </Grid>
+                                                    
+                                                </Border>
+                                                
+                                                <Border Grid.Row="4" BorderBrush="Beige" BorderThickness="1" Margin="5 0 5 5" Padding="0 5 0 5">
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                        <Button Padding="10 0 10 0" Margin="10 0"> &lt; </Button>
+                                                        <Slider Width="100" VerticalContentAlignment="Stretch" VerticalAlignment="Center"></Slider>
+                                                        <Button Padding="10 0 10 0" Margin="10 0"> &gt; </Button>
+                                                        <TextBox Width="100" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">190</TextBox>
+                                                        <Button Padding="10 0 10 0" Margin="10 0">Set BPM</Button>
+                                                        <Separator Width="25" Visibility="Hidden"></Separator>
+                                                        
+                                                        <Button Padding="10 0 10 0"> Profil erstellen </Button>
+                                                        <Button Padding="10 0 10 0"> Profil Laden</Button>
+                                                        <Button Padding="10 0 10 0"> Letztes Profil laden</Button>
+                                                    </StackPanel>
+                                                </Border>
+                                            </Grid>
+                                            
                                         </Border>
 
 
@@ -80,51 +178,13 @@
                                 </Border>
 
                                 <!-- Control Panel -->
-                                <Border Background="#6E6D5F" Grid.Column="1">
-
-                                    <Grid>
-
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition></RowDefinition>
-                                            <RowDefinition></RowDefinition>
-                                        </Grid.RowDefinitions>
-
-                                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                            <Button Height="35" Width="200" Margin="10 2 10 5">Create Profile</Button>
-                                            <Button Height="35" Width="200" Margin="10 5 10 5">Load Profile</Button>
-                                            <Button Height="35"  Width="200" Margin="10 5 10 2"></Button>
-                                        </StackPanel>
-
-                                        <Border Grid.Row="1">
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="0.1*"/>
-                                                    <ColumnDefinition/>
-                                                    <ColumnDefinition Width="0.1*"/>
-                                                </Grid.ColumnDefinitions>
-
-                                                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                                                    <Button Width="50">
-                                                        <Label Content="&lt;"></Label>
-                                                    </Button>
-                                                    <StackPanel>
-                                                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Set BPM</TextBlock>
-                                                        <TextBlock HorizontalAlignment="Center">akt BPM</TextBlock>
-                                                        <Slider HorizontalAlignment="Center" VerticalAlignment="Center" Width="200"/>
-                                                    </StackPanel>
-                                                    <Button Width="50" Content="&gt;"/>
-
-                                                </StackPanel>
-                                            </Grid>
-                                        </Border>
-                                    </Grid>
-                                </Border>
+                              
 
                             </Grid>
                         </Border>
 
                         <!-- Play -->
-                        <Border Grid.Row="3" Background="#9DA7D2">
+                        <Border Grid.Row="2" Background="#9DA7D2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="25"/>
@@ -134,7 +194,7 @@
 
                                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Column="1">
                                     <Button Height="35" Width="100" >|&lt;</Button>
-                                    <Button  x:Name="bt_Play" Click="bt_Play_Click" Height="35" Width="200" Margin="10 2 10 5">Play / Pause</Button>
+                                    <Button  x:Name="bt_Play" Command="{Binding PlayCommand}" Height="35" Width="200" Margin="10 2 10 5">Play / Pause</Button>
                                     <Button Height="35" Width="200" Margin="10 5 10 5">Stop</Button>
                                     <Button Height="35"  Width="200" Margin="10 5 10 2">Record</Button>
                                 </StackPanel>
@@ -195,10 +255,11 @@
 
     <WindowChrome.WindowChrome>
         <WindowChrome>
-            <WindowChrome.CaptionHeight>42</WindowChrome.CaptionHeight>
+            <WindowChrome.CaptionHeight>21</WindowChrome.CaptionHeight>
             <WindowChrome.CornerRadius>10</WindowChrome.CornerRadius>
             <WindowChrome.ResizeBorderThickness>10</WindowChrome.ResizeBorderThickness>
             <WindowChrome.UseAeroCaptionButtons>True</WindowChrome.UseAeroCaptionButtons>
         </WindowChrome>
     </WindowChrome.WindowChrome>
+    
 </Window>

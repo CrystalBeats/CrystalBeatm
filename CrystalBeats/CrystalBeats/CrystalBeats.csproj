@@ -60,6 +60,7 @@
     </ApplicationDefinition>
     <Compile Include="SequencerClass.cs" />
     <Compile Include="Timer.cs" />
+    <Compile Include="ViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

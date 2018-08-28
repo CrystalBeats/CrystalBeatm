@@ -28,7 +28,9 @@ namespace CrystalBeats
 
         private void bt_Play_Click(object sender, RoutedEventArgs e)
         {
-            
+            Sequencer sequencer = new Sequencer();
+
+            sequencer.Play();
         }
     }
 }

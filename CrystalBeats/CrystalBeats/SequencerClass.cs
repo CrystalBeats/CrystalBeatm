@@ -45,7 +45,7 @@ namespace CrystalBeats
         private int iBeatsPerSequence;
         private int iSequenceLength;
 
-        private CrystalBeatmachine.Timer tTimer;
+        private CrystalBeats.Timer tTimer;
 
         private ISoundEngine sePlayer;
 
@@ -72,10 +72,10 @@ namespace CrystalBeats
             sePlayer = new ISoundEngine();
         }
 
-        public Sequence(Profile SequencerProfile)
-        {
+        //public Sequence(Profile SequencerProfile)
+        //{
 
-        }
+        //}
 
         private int getBPMasMS()
         {

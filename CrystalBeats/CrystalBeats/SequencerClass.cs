@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace CrystalBeats
 {
-    class Sequencer
+    public class Sequencer
     {
         private int iBPM;
 

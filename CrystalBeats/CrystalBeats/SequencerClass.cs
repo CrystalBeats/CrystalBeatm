@@ -8,7 +8,7 @@ using System.IO;
 using IrrKlang;
 using System.ComponentModel;
 
-namespace CrystalBeatmachine
+namespace CrystalBeats
 {
     class Sequencer
     {

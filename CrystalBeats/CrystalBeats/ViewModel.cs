@@ -12,6 +12,7 @@ namespace CrystalBeats
     {
 
         Sequencer sequencer;
+        Controller controller;
 
         #region PropertyChanged
         public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
@@ -51,15 +52,29 @@ namespace CrystalBeats
         #endregion
 
         public ICommand PlayCommand { get; set; }
-        
+        public ICommand SelectSound { get; set; }
+
         public ViewModel()
         {
+
             sequencer = new Sequencer();
+            controller = new Controller();
+
             PlayCommand = new RelayCommand(() => sequencer.Play());
-            
+            SelectSound = new RelayCommand(() => SetController());
+
         }
 
+        public void SetController()
+        {
+            //if (sequencer.sqBar1.Soundname == String.Empty)
+           // { 
+            sequencer.sqBar1.Soundname = controller.setSoundFromFile();
+           // }
 
+            sequencer.Play();
+
+        }
         
     }
 }

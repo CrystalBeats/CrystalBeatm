@@ -246,8 +246,8 @@
                                 </Border>
                                 <Border Grid.Row="3" BorderBrush="Green" BorderThickness="1">
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button Height="75" Width="50" Margin="3 0">
-                                            <StackPanel>
+                                        <Button x:Name="bt1" Command="{Binding SelectSound}" Height="75" Width="50" Margin="3 0">
+                                            <StackPanel> 
                                                 <Label Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center">1</Label>
                                             </StackPanel>
                                         </Button>

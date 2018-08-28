@@ -44,7 +44,7 @@ namespace CrystalBeats
             colSequences.Add(sqBar7);
             colSequences.Add(sqBar8);
 
-            colSequences.CopyTo(sqSequences);
+            // colSequences.CopyTo(sqSequences);
         }
 
         public void Play()

@@ -41,7 +41,7 @@
                         </Grid.RowDefinitions>
 
                         <!-- Info -->
-                        <Border Grid.Row="1" Background="#B6B8BB" 
+                        <Border Grid.Row="1" Background="#808285" 
                                 
                                 >
                             <Grid>
@@ -52,7 +52,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <!-- Info Bereich -->
-                                <Border Background="#596B6E">
+                                <Border Background="#403E3B">
 
                                     <Grid>
 
@@ -77,7 +77,7 @@
                                                     <RowDefinition></RowDefinition>
                                                 </Grid.RowDefinitions>
 
-                                                <Border Grid.RowSpan="4" BorderBrush="Black" BorderThickness="1" Margin="5 5 5 10" Background="#3f6292">
+                                                <Border Grid.RowSpan="4" BorderBrush="Black" BorderThickness="1" Margin="5 5 5 10" Background="#5C574F">
                                                     <Grid>
 
                                                         <Grid.RowDefinitions>
@@ -150,8 +150,8 @@
                                                     </Grid>
                                                     
                                                 </Border>
-                                                
-                                                <Border Grid.Row="4" BorderBrush="Beige" BorderThickness="1" Margin="5 0 5 5" Padding="0 5 0 5">
+
+                                                <Border Grid.Row="4" BorderBrush="Black" BorderThickness="1" Margin="5 0 5 5" Padding="0 5 0 5" Background="#5C574F">
                                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                                         <Button Padding="10 0 10 0" Margin="10 0"> &lt; </Button>
                                                         <Slider Width="100" VerticalContentAlignment="Stretch" VerticalAlignment="Center"></Slider>
@@ -184,7 +184,7 @@
                         </Border>
 
                         <!-- Play -->
-                        <Border Grid.Row="2" Background="#9DA7D2">
+                        <Border Grid.Row="2" Background="#403E3B" BorderBrush="Black" BorderThickness="5 2.5 5 2.5">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="25"/>
@@ -202,46 +202,75 @@
                         </Border>
 
                         <!-- Sequenz -->
-                        <Border Grid.Row="4" Background="#B4D2C3">
-
+                        <Border Grid.Row="4" Background="#403E3B" Padding="5" BorderBrush="Black" BorderThickness="5">
                             <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="10"/>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition Width="10"/>
-                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"></RowDefinition>
+                                    <RowDefinition Height=".5*"></RowDefinition>
+                                    <RowDefinition Height=".3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition Height="10"></RowDefinition>
+                                </Grid.RowDefinitions>
 
-
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Center" Grid.Column="1">
-
-                                    <StackPanel VerticalAlignment="Stretch">
-
-                                        <Border BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0">
-                                            <Rectangle Height="20" Fill="Red" ></Rectangle>
-                                        </Border>
-                                        <Separator Height="10" Visibility="Hidden"></Separator>
-                                        <Button Width="50" Height="100" VerticalAlignment="Stretch">1</Button>
-
+                                <Border Grid.Row="1" Padding="10" BorderBrush="Wheat" BorderThickness="1">
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Button Width="75" Height="25" Margin="5 0">1</Button>
+                                        <Button Width="75" Height="25" Margin="5 0">2</Button>
+                                        <Button Width="75" Height="25" Margin="5 0">3</Button>
+                                        <Button Width="75" Height="25" Margin="5 0">4</Button>
+                                        <Button Width="75" Height="25" Margin="5 0">5</Button>
+                                        <Button Width="75" Height="25" Margin="5 0">6</Button>
+                                        <Button Width="75" Height="25" Margin="5 0">7</Button>
+                                        <Button Width="75" Height="25" Margin="5 0">8</Button>
                                     </StackPanel>
-
-                                    <Button Width="50">2</Button>
-                                    <Button Width="50">3</Button>
-                                    <Button Width="50">4</Button>
-                                    <Button Width="50">5</Button>
-                                    <Button Width="50">6</Button>
-                                    <Button Width="50">7</Button>
-                                    <Button Width="50">8</Button>
-                                    <Button Width="50">9</Button>
-                                    <Button Width="50">10</Button>
-                                    <Button Width="50">11</Button>
-                                    <Button Width="50">12</Button>
-                                    <Button Width="50">13</Button>
-                                    <Button Width="50">14</Button>
-                                    <Button Width="50">15</Button>
-                                    <Button Width="50">16</Button>
-                                </StackPanel>
+                                </Border>
+                                <Border Grid.Row="2" BorderBrush="Yellow" BorderThickness="1" Padding="10 3" Visibility="Hidden">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="3" BorderBrush="Green" BorderThickness="1">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Button Height="75" Width="50" Margin="3 0">
+                                            <StackPanel>
+                                                <Label Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center">1</Label>
+                                            </StackPanel>
+                                        </Button>
+                                        <Button Height="75" Width="50" Margin="3 0">2</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">3</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">4</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">5</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">6</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">7</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">8</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">9</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">10</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">11</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">12</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">13</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">14</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">15</Button>
+                                        <Button Height="75" Width="50" Margin="3 0">16</Button>
+                                    </StackPanel>
+                                </Border>
                             </Grid>
                         </Border>
+
                     </Grid>
 
                 </Border>

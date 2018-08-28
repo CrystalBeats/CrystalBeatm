@@ -51,11 +51,12 @@ namespace CrystalBeats
         #endregion
 
         public ICommand PlayCommand { get; set; }
-
+        
         public ViewModel()
         {
             sequencer = new Sequencer();
             PlayCommand = new RelayCommand(() => sequencer.Play());
+            
         }
 
 

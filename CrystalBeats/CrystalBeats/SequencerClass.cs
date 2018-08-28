@@ -16,6 +16,7 @@ namespace CrystalBeats
 
         public Sequence sqBar1, sqBar2, sqBar3, sqBar4, sqBar5, sqBar6, sqBar7, sqBar8;
         public Sequence[] sqSequences;
+        public Sequence sqActiveSequence;
 
         public List<Sequence> colSequences;
         public Sequencer()
@@ -30,6 +31,9 @@ namespace CrystalBeats
             sqBar6 = new Sequence();
             sqBar7 = new Sequence();
             sqBar8 = new Sequence();
+            sqActiveSequence = new Sequence();
+
+            sqActiveSequence = sqBar1;
 
             colSequences.Add(sqBar1);
             colSequences.Add(sqBar2);
@@ -277,10 +281,10 @@ namespace CrystalBeats
         }
     }
 
-    public class Beat
+    public class Accent
     {
         private bool bPlayed;
-        public Beat()
+        public Accent()
         {
             bPlayed = false;
         }

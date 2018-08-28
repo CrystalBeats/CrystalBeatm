@@ -1,9 +1,15 @@
 ﻿using Microsoft.Win32;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace CrystalBeats
 {
@@ -19,13 +25,13 @@ namespace CrystalBeats
             seq.Rested = !seq.Rested;
         }
 
-        public void enableVisuals(Sequence seq, List<Sequence> seqCol, Sequencer sequencer)
+        public void enableVisuals(Sequence seq, List<Sequence> seqCol, Sequencer Sequencer)
         {
             foreach(Sequence seqDummy in seqCol)
             {
                 seqDummy.Visible = (seqDummy == seq) ? true : false;
             }
-            sequencer.syncSequences;
+            Sequencer.syncSequences();
         }
 
         public void turnAccent(int iAccent, int[] iAccentList)
@@ -33,14 +39,20 @@ namespace CrystalBeats
             iAccentList[iAccent] = (iAccentList[iAccent] == 0) ? 1 : 0;
         }
 
-        public string setSound()
+        public string setSoundFromFile()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             return (openFileDialog.ShowDialog() == true) ? openFileDialog.FileName : "";
         }
 
-        public void 
+        public SolidColorBrush turnColor(int[] Accents, int iAccent)
+        {
+            return (Accents[iAccent] == 0) ? Brushes.Gray : Brushes.Purple;
+        }
 
-
+        public void setActiveBar(Sequence sequence, Sequencer sequencer)
+        {
+            sequencer.sqActiveSequence = sequence;
+        }
     }
 }

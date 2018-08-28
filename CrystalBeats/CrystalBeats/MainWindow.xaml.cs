@@ -20,9 +20,15 @@ namespace CrystalBeats
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void bt_Play_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

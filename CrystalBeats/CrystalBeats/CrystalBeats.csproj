@@ -35,7 +35,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="irrKlang.NET4">
-      <HintPath>.\irrKlang.NET4.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Documents\irrKlang-1.6.0\bin\dotnet-4\irrKlang.NET4.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

@@ -134,7 +134,7 @@
 
                                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Column="1">
                                     <Button Height="35" Width="100" >|&lt;</Button>
-                                    <Button Height="35" Width="200" Margin="10 2 10 5">Play / Pause</Button>
+                                    <Button  x:Name="bt_Play" Click="bt_Play_Click" Height="35" Width="200" Margin="10 2 10 5">Play / Pause</Button>
                                     <Button Height="35" Width="200" Margin="10 5 10 5">Stop</Button>
                                     <Button Height="35"  Width="200" Margin="10 5 10 2">Record</Button>
                                 </StackPanel>

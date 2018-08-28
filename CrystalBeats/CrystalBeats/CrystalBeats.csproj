@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ControllerClass.cs" />
     <Compile Include="SequencerClass.cs" />
     <Compile Include="Timer.cs" />
     <Page Include="MainWindow.xaml">

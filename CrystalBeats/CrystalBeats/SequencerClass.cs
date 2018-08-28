@@ -15,10 +15,32 @@ namespace CrystalBeats
         private int iBPM;
 
         public Sequence sqBar1, sqBar2, sqBar3, sqBar4, sqBar5, sqBar6, sqBar7, sqBar8;
+        public Sequence[] sqSequences;
+
+        public List<Sequence> colSequences;
         public Sequencer()
         {
             iBPM = 160;
+            colSequences = new List<Sequence>();
             sqBar1 = new Sequence();
+            sqBar2 = new Sequence();
+            sqBar3 = new Sequence();
+            sqBar4 = new Sequence();
+            sqBar5 = new Sequence();
+            sqBar6 = new Sequence();
+            sqBar7 = new Sequence();
+            sqBar8 = new Sequence();
+
+            colSequences.Add(sqBar1);
+            colSequences.Add(sqBar2);
+            colSequences.Add(sqBar3);
+            colSequences.Add(sqBar4);
+            colSequences.Add(sqBar5);
+            colSequences.Add(sqBar6);
+            colSequences.Add(sqBar7);
+            colSequences.Add(sqBar8);
+
+            colSequences.CopyTo(sqSequences);
         }
 
         public void Play()
@@ -30,14 +52,29 @@ namespace CrystalBeats
         {
             sqBar1.Stop();
         }
+
+        public void syncSequences()
+        {
+  
+            colSequences.CopyTo(sqSequences);
+            sqBar1 = sqSequences[0];
+            sqBar2 = sqSequences[1];
+            sqBar3 = sqSequences[2];
+            sqBar4 = sqSequences[3];
+            sqBar5 = sqSequences[4];
+            sqBar6 = sqSequences[5];
+            sqBar7 = sqSequences[6];
+            sqBar8 = sqSequences[7];
+        }
     }
 
-    class Sequence
+    public class Sequence
     {
         private string strSoundslot;
         private int iDB;
         private int iBPM;
         private bool bRested;
+        private bool bVisible;
 
         private int[] iPlayedBeats;
 
@@ -72,7 +109,7 @@ namespace CrystalBeats
             sePlayer = new ISoundEngine();
         }
 
-        //public Sequence(Profile SequencerProfile)
+       // public Sequence(Profile SequencerProfile)
         //{
 
         //}
@@ -218,6 +255,15 @@ namespace CrystalBeats
             }
         }
 
+        public bool Visible
+        {
+            get { return bVisible; }
+            set
+            {
+                bVisible = value;
+            }
+        }
+
         public string Soundname
         {
             get { return strSoundslot; }
@@ -227,6 +273,24 @@ namespace CrystalBeats
                 {
                     strSoundslot = value;
                 }
+            }
+        }
+    }
+
+    public class Beat
+    {
+        private bool bPlayed;
+        public Beat()
+        {
+            bPlayed = false;
+        }
+
+        public bool Played
+        {
+            get { return bPlayed; }
+            set
+            {
+                bPlayed = !bPlayed;
             }
         }
     }

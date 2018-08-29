@@ -49,6 +49,8 @@ namespace CrystalBeats
 
            // sqSequences = new 
           //  colSequences.CopyTo(sqSequences);
+           // sqSequences = new 
+           // colSequences.CopyTo(sqSequences);
 
         }
 
@@ -196,6 +198,7 @@ namespace CrystalBeats
 
         public void PlaySound()
         {
+            sePlayer.StopAllSounds();
             sePlayer.Play2D(strSoundslot);
         }
 

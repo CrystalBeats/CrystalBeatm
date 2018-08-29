@@ -78,7 +78,17 @@ namespace CrystalBeats
 
         public void neuesProfil()
         {
-            aktprofile = new ProfileClass();
+            // Todo neues Profil sollte nur in EngineClass angelegt werden
+            Sequence[] sequences = new Sequence[] {
+                sequencer.sqBar1,
+                sequencer.sqBar2,
+                sequencer.sqBar3,
+                sequencer.sqBar4,
+                sequencer.sqBar5,
+                sequencer.sqBar6,
+                sequencer.sqBar7,
+                sequencer.sqBar8};
+            aktprofile = new ProfileClass(sequences);
         }
 
         public void ladeProfil()

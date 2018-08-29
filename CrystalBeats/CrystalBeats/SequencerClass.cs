@@ -23,59 +23,27 @@ namespace CrystalBeats
         {
             iBPM = 160;
             colSequences = new List<Sequence>();
-            sqBar1 = new Sequence("bar1");
-            sqBar2 = new Sequence("bar2");
-            sqBar3 = new Sequence("bar3");
-            sqBar4 = new Sequence("bar4");
-            sqBar5 = new Sequence("bar5");
-            sqBar6 = new Sequence("bar6");
-            sqBar7 = new Sequence("bar7");
-            sqBar8 = new Sequence("bar8");
             sqActiveSequence = new Sequence("");
 
-            sqActiveSequence = sqBar1;
+            sqSequences = new Sequence[] {new Sequence("Bar1"), new Sequence("Bar2"), new Sequence("Bar3"), new Sequence("Bar4"), new Sequence("Bar5"), new Sequence("Bar6"), new Sequence("Bar7"), new Sequence("Bar8") };
 
-            colSequences.Add(sqBar1);
-            colSequences.Add(sqBar2);
-            colSequences.Add(sqBar3);
-            colSequences.Add(sqBar4);
-            colSequences.Add(sqBar5);
-            colSequences.Add(sqBar6);
-            colSequences.Add(sqBar7);
-            colSequences.Add(sqBar8);
-
-
-            // colSequences.CopyTo(sqSequences);
-
-           // sqSequences = new 
-          //  colSequences.CopyTo(sqSequences);
-           // sqSequences = new 
-           // colSequences.CopyTo(sqSequences);
-
+            sqActiveSequence = sqSequences[0];
         }
 
         public void Play()
         {
-            sqBar1.Start();
+            for(int i = 0; i <sqSequences.Length; i++)
+            {
+                sqSequences[i].Start();
+            }
         }
 
         public void Stop()
         {
-            sqBar1.Stop();
-        }
-
-        public void syncSequences()
-        {
-  
-            colSequences.CopyTo(sqSequences);
-            sqBar1 = sqSequences[0];
-            sqBar2 = sqSequences[1];
-            sqBar3 = sqSequences[2];
-            sqBar4 = sqSequences[3];
-            sqBar5 = sqSequences[4];
-            sqBar6 = sqSequences[5];
-            sqBar7 = sqSequences[6];
-            sqBar8 = sqSequences[7];
+            for (int i = 0; i < sqSequences.Length; i++)
+            {
+                sqSequences[i].Stop();
+            }
         }
 
         public void PlaySound()
@@ -86,10 +54,16 @@ namespace CrystalBeats
         public Sequence ActiveSequence
         {
             get { return sqActiveSequence; }
-            set
-            {
-                sqActiveSequence = value;
-            }
+        }
+
+        public void setActiveSequence(int x)
+        {
+            sqActiveSequence = sqSequences[x];
+        }
+
+        public Sequence[] aSequences
+        {
+            get { return sqSequences; }
         }
     }
 
@@ -309,6 +283,11 @@ namespace CrystalBeats
                     strSoundslot = value;
                 }
             }
+        }
+
+        public string Name
+        {
+            get { return strBarName; }
         }
     }
 

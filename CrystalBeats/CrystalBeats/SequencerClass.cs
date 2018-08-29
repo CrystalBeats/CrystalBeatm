@@ -23,15 +23,15 @@ namespace CrystalBeats
         {
             iBPM = 160;
             colSequences = new List<Sequence>();
-            sqBar1 = new Sequence();
-            sqBar2 = new Sequence();
-            sqBar3 = new Sequence();
-            sqBar4 = new Sequence();
-            sqBar5 = new Sequence();
-            sqBar6 = new Sequence();
-            sqBar7 = new Sequence();
-            sqBar8 = new Sequence();
-            sqActiveSequence = new Sequence();
+            sqBar1 = new Sequence("bar1");
+            sqBar2 = new Sequence("bar2");
+            sqBar3 = new Sequence("bar3");
+            sqBar4 = new Sequence("bar4");
+            sqBar5 = new Sequence("bar5");
+            sqBar6 = new Sequence("bar6");
+            sqBar7 = new Sequence("bar7");
+            sqBar8 = new Sequence("bar8");
+            sqActiveSequence = new Sequence("");
 
             sqActiveSequence = sqBar1;
 
@@ -82,6 +82,15 @@ namespace CrystalBeats
         {
             sqActiveSequence.PlaySound();
         }
+
+        public Sequence ActiveSequence
+        {
+            get { return sqActiveSequence; }
+            set
+            {
+                sqActiveSequence = value;
+            }
+        }
     }
 
     public class Sequence
@@ -98,6 +107,8 @@ namespace CrystalBeats
         private int iBeatsPerSequence;
         private int iSequenceLength;
 
+        private readonly string strBarName;
+
         private CrystalBeats.Timer tTimer;
 
         private ISoundEngine sePlayer;
@@ -107,22 +118,23 @@ namespace CrystalBeats
 
         public static readonly int[] iaSequenceLengthEnum = { 4, 8, 16, 32 };
 
-        public Sequence()
+        public Sequence(string strBarname)
         {
-            tTimer = new Timer();
-            tTimer.Mode = TimerMode.Periodic;
-            tTimer.Tick += new EventHandler(this.cbtTimer_Tick);
+            this.tTimer = new Timer();
+            this.tTimer.Mode = TimerMode.Periodic;
+            this.tTimer.Tick += new EventHandler(this.cbtTimer_Tick);
 
-            iDB = 15;
-            iBPM = 160;
-            iCounter = 1;
-            iBeatsPerSequence = 16;
-            bRested = false;
-            strSoundslot = @"C:\Users\chokemedaddy\Downloads\Berufsschule\adamnsampler-master\KORG WPF\Resources\acerBrandNeu14.wav";
+            this.iDB = 15;
+            this.iBPM = 160;
+            this.iCounter = 1;
+            this.iBeatsPerSequence = 16;
+            this.bRested = false;
+            this.strBarName = strBarname;
+            this.strSoundslot = @"C:\Users\chokemedaddy\Downloads\Berufsschule\adamnsampler-master\KORG WPF\Resources\acerBrandNeu14.wav";
 
-            iPlayedBeats = new int[] { 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 };
+            this.iPlayedBeats = new int[] { 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 };
 
-            sePlayer = new ISoundEngine();
+            this.sePlayer = new ISoundEngine();
         }
 
        // public Sequence(Profile SequencerProfile)

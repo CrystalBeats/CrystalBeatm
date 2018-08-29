@@ -21,7 +21,7 @@
     </Window.InputBindings>
     
     -->
-    
+
     <Grid>
 
 
@@ -124,6 +124,16 @@
                                                                     <ColumnDefinition></ColumnDefinition>
                                                                     <ColumnDefinition></ColumnDefinition>
                                                                 </Grid.ColumnDefinitions>
+
+                                                                <Border BorderBrush="White" BorderThickness="5">
+                                                                    <StackPanel Orientation="Horizontal">
+                                                                    <Label Foreground="White" FontSize="24">Name Soundstück </Label>
+                                                                        <Button Width="50">&lt;</Button>
+                                                                        <Button Width="50">&gt;</Button>
+                                                                    </StackPanel>
+                                                                </Border>
+
+                                                                <Border Grid.Column="1" Background="White"></Border>
                                                             </Grid>
                                                         </Border>
                                                         <Border Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="10 0">
@@ -242,14 +252,14 @@
 
                                 <Border Grid.Row="1" Padding="10" BorderBrush="Wheat" BorderThickness="1">
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Button Width="75" Height="25" Margin="5 0" Command="{Binding SelectSound}">1</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="2" Width="75" Height="25" Margin="5 0">2</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="3" Width="75" Height="25" Margin="5 0">3</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="4" Width="75" Height="25" Margin="5 0">4</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="5"  Width="75" Height="25" Margin="5 0">5</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="6" Width="75" Height="25" Margin="5 0">6</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="7" Width="75" Height="25" Margin="5 0">7</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="8" Width="75" Height="25" Margin="5 0">8</Button>
+                                        <Button Width="75" Height="25" Margin="5 0" Command="{Binding SequenzKommand}">1</Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">2</Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">3</Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">4</Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">5</Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">6</Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">7</Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">8</Button>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="2" BorderBrush="Yellow" BorderThickness="1" Padding="10 3" Visibility="Hidden">

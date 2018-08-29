@@ -18,7 +18,7 @@ namespace CrystalBeats
     public class Controller
     {
         string strKey;
-        Sequencer sqSequencer;
+        public Sequencer sqSequencer;
         ProfileClass pProfile;
         public Controller()
         {

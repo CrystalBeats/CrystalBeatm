@@ -11,7 +11,7 @@ namespace CrystalBeats
     public class ProfileClass
     {
         string soundactive, activeprofile;
-        private Sequence[] bars = new Sequence[] { /*get Bars*/ };
+        private Sequence[] bars = new Sequence[8];
         // 8 bars x 16 beats
         int[,] accentedBeats = new int[,] {
             {  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -26,7 +26,11 @@ namespace CrystalBeats
 
         string path, profilepath;
         Configuration config = new Configuration();
-
+        
+        public ProfileClass(Sequence[] sequences)
+        {
+            bars = sequences;
+        }
         // Getter setter accentedbeats
         public int[,] getAccentedBeats(){return accentedBeats;}
         public void setAccentedBeats(SharpConfig.Section[] sections)

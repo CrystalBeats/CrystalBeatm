@@ -8,9 +8,18 @@ namespace CrystalBeats
 {
     public class Engine
     {
+<<<<<<< HEAD
         ProfileClass pProfile;
         public Controller cController;
         public Sequencer sSequencer;
+=======
+
+        ProfileClass pProfile;
+
+        public Controller cController;
+        public Sequencer sSequencer;
+
+>>>>>>> Frontend
         public Engine()
         {
             cController = new Controller();

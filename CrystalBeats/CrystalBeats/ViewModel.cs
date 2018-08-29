@@ -241,11 +241,19 @@ namespace CrystalBeats
         public async Task SetSpezificSequenz(object parameter)
         {
             Debugger.Break();
+
+            this.Sequenz = (int)parameter;
+
+            
+            
         }
 
         public async Task SetSpezificSchlag(object parameter)
         {
             Debugger.Break();
+            this.Schlag = (int)parameter;
+
+         //  await controller.turnAccent(this.Sequenz, this.Schlag));
         }
 
         #endregion
@@ -253,6 +261,7 @@ namespace CrystalBeats
         #region Ansteuerung Frontend
 
         //Ansteuerung Display
+        #region Display
         private string mAktBMP;
     
         public string AktBPM
@@ -362,6 +371,30 @@ namespace CrystalBeats
         //Ansteuerung Bars/Sequenzen
 
         //Ansteuerung Schläge
+
+        #endregion
+
+        //
+        #region Controller
+
+        private int mSequenz;
+
+        public int Sequenz
+        {
+            get { return mSequenz; }
+            set { mSequenz = value; onPropertyChanged("Sequenz"); }
+        }
+
+        private int mSchlag;
+
+        public int Schlag
+        {
+            get { return mSchlag; }
+            set { mSchlag = value; onPropertyChanged("Schlag"); }
+        }
+
+
+        #endregion
 
         #endregion
     }

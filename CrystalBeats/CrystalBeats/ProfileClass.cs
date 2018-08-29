@@ -34,10 +34,6 @@ namespace CrystalBeats
             {
                 bars[i] = sequences[i];
             }
-            string testprofile = @"C:\Users\user\Documents\GitHub\CrystalBeatm\CrystalBeats\Penis.ini";
-            string tosave = @"C:\Users\user\Documents\GitHub\CrystalBeatm\CrystalBeats\tosave.ini";
-            loadProfile(testprofile);
-            saveProfile(tosave);
         }
         // Getter setter accentedbeats
         public int[,] getAccentedBeats(){return accentedBeats;}

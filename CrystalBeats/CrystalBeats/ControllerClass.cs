@@ -36,9 +36,9 @@ namespace CrystalBeats
             pProfile = new ProfileClass(sequences);
         }
 
-        public void turnSequence(Sequence seq)
+        public void turnSequence(int iSequence)
         {
-            seq.Rested = !seq.Rested;
+            sqSequencer.aSequences[iSequence].Rested = !sqSequencer.aSequences[iSequence].Rested;
         }
 
         public void enableVisuals(Sequence seq, List<Sequence> seqCol, Sequencer Sequencer)
@@ -49,9 +49,9 @@ namespace CrystalBeats
             }
         }
 
-        public void turnAccent(int iAccent, int[] iAccentList)
+        public void turnAccent(int iSequence, int iAccent)
         {
-            iAccentList[iAccent] = (iAccentList[iAccent] == 0) ? 1 : 0;
+            sqSequencer.aSequences[iSequence].PlayedBeats[iAccent] = (sqSequencer.aSequences[iSequence].PlayedBeats[iAccent] == 0) ? 1 : 0;
         }
 
         public string setSoundFromFile()
@@ -60,19 +60,19 @@ namespace CrystalBeats
             return (openFileDialog.ShowDialog() == true) ? openFileDialog.FileName : "";
         }
 
-        public SolidColorBrush turnColor(int[] Accents, int iAccent)
+        public SolidColorBrush turnColor(int iSequence, int iAccent)
         {
-            return (Accents[iAccent] == 0) ? Brushes.Gray : Brushes.Purple;
+            return (sqSequencer.aSequences[iSequence].PlayedBeats[iAccent] == 0) ? Brushes.Gray : Brushes.Purple;
         }
 
-        public void setActiveBar(Sequence sequence, Sequencer sequencer)
+        public void setActiveBar(int iSequence)
         {
-            sequencer.sqActiveSequence = sequence;
+            sqSequencer.sqActiveSequence = sqSequencer.aSequences[iSequence];
         }
 
-        public void PlayOnce(Sequencer sequencer)
+        public void PlayOnce()
         {
-            sequencer.PlaySound();
+            sqSequencer.PlaySound();
         }
 
         public void sendCommand(string strCommand)
@@ -80,7 +80,7 @@ namespace CrystalBeats
             string asd = "";
             switch(strCommand)
             {
-                case "Buttons6": //HopScotch Feld wie in Array
+                case ("Buttons6"): //HopScotch Feld wie in Array
                     sqSequencer.aSequences[0].PlaySound();
                     break;
                 case "Buttons7":
@@ -102,6 +102,30 @@ namespace CrystalBeats
                     sqSequencer.aSequences[6].PlaySound();
                     break;
                 case "Buttons1":
+                    sqSequencer.aSequences[7].PlaySound();
+                    break;
+                case ("1"): //HopScotch Feld wie in Array
+                    sqSequencer.aSequences[0].PlaySound();
+                    break;
+                case "2":
+                    sqSequencer.aSequences[1].PlaySound();
+                    break;
+                case "3":
+                    sqSequencer.aSequences[2].PlaySound();
+                    break;
+                case "4":
+                    sqSequencer.aSequences[3].PlaySound();
+                    break;
+                case "5":
+                    sqSequencer.aSequences[4].PlaySound();
+                    break;
+                case "6":
+                    sqSequencer.aSequences[5].PlaySound();
+                    break;
+                case "7":
+                    sqSequencer.aSequences[6].PlaySound();
+                    break;
+                case "8":
                     sqSequencer.aSequences[7].PlaySound();
                     break;
                 default:

@@ -10,16 +10,23 @@ namespace CrystalBeats
     {
 <<<<<<< HEAD
         ProfileClass pProfile;
+
         public Controller cController;
         public Sequencer sSequencer;
+<<<<<<< HEAD
 =======
 
         ProfileClass pProfile;
+=======
+>>>>>>> a8291945fe3b33f0e27d3d74fe1df834c34ab6fc
 
         public Controller cController;
         public Sequencer sSequencer;
 
+<<<<<<< HEAD
 >>>>>>> Frontend
+=======
+>>>>>>> a8291945fe3b33f0e27d3d74fe1df834c34ab6fc
         public Engine()
         {
             cController = new Controller();

@@ -152,18 +152,30 @@
                                                 </Border>
 
                                                 <Border Grid.Row="4" BorderBrush="Black" BorderThickness="1" Margin="5 0 5 5" Padding="0 5 0 5" Background="#5C574F">
-                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                                        <Button Padding="10 0 10 0" Margin="10 0"> &lt; </Button>
-                                                        <Slider Width="100" VerticalContentAlignment="Stretch" VerticalAlignment="Center"></Slider>
-                                                        <Button Padding="10 0 10 0" Margin="10 0"> &gt; </Button>
-                                                        <TextBox Width="100" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">190</TextBox>
-                                                        <Button Padding="10 0 10 0" Margin="10 0">Set BPM</Button>
-                                                        <Separator Width="25" Visibility="Hidden"></Separator>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="10"></ColumnDefinition>
+                                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                                            <Button Grid.Column="1" Padding="10 0 10 0" Margin="10 0"> &lt; </Button>
+                                                            <Slider Grid.Column="1" Width="100" VerticalContentAlignment="Stretch" VerticalAlignment="Center"></Slider>
+                                                            <Button Grid.Column="1" Padding="10 0 10 0" Margin="10 0"> &gt; </Button>
+                                                            <TextBox Width="100" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">190</TextBox>
+                                                            <Button Padding="10 0 10 0" Margin="10 0">Set BPM</Button>
+                                                        </StackPanel>
+
                                                         
-                                                        <Button Padding="10 0 10 0"> Profil erstellen </Button>
-                                                        <Button Padding="10 0 10 0"> Profil Laden</Button>
-                                                        <Button Padding="10 0 10 0"> Letztes Profil laden</Button>
-                                                    </StackPanel>
+                                                        <Button Grid.Column="3" Command="{Binding NewProfile}" Padding="10 0 10 0"> Profil erstellen </Button>
+
+                                                        <Button Grid.Column="4" Padding="10 0 10 0" Command="{Binding SaveProfile}"> Profil speichern </Button>
+                                                        <Button Grid.Column="5" Padding="10 0 10 0">Profil Laden</Button>
+                                                    </Grid>
                                                 </Border>
                                             </Grid>
                                             
@@ -214,7 +226,7 @@
 
                                 <Border Grid.Row="1" Padding="10" BorderBrush="Wheat" BorderThickness="1">
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Button Width="75" Height="25" Margin="5 0">1</Button>
+                                        <Button Width="75" Height="25" Margin="5 0" Command="{Binding SelectSound}">1</Button>
                                         <Button Width="75" Height="25" Margin="5 0">2</Button>
                                         <Button Width="75" Height="25" Margin="5 0">3</Button>
                                         <Button Width="75" Height="25" Margin="5 0">4</Button>
@@ -246,7 +258,7 @@
                                 </Border>
                                 <Border Grid.Row="3" BorderBrush="Green" BorderThickness="1">
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button x:Name="bt1" Command="{Binding SelectSound}" Height="75" Width="50" Margin="3 0">
+                                        <Button x:Name="bt1"  Height="75" Width="50" Margin="3 0">
                                             <StackPanel> 
                                                 <Label Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center">1</Label>
                                             </StackPanel>

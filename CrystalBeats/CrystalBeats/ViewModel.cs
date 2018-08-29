@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace CrystalBeats
@@ -13,6 +16,7 @@ namespace CrystalBeats
 
         Sequencer sequencer;
         Controller controller;
+        ProfileClass aktprofile;
 
         #region PropertyChanged
         public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
@@ -54,15 +58,67 @@ namespace CrystalBeats
         public ICommand PlayCommand { get; set; }
         public ICommand SelectSound { get; set; }
 
+        public ICommand NewProfile { get; set; }
+        public ICommand SaveProfile { get; set; }
+        public ICommand LoadProfile { get; set; }
+
         public ViewModel()
         {
 
             sequencer = new Sequencer();
             controller = new Controller();
+            
 
             PlayCommand = new RelayCommand(() => sequencer.Play());
             SelectSound = new RelayCommand(() => SetController());
+            NewProfile = new RelayCommand(() => neuesProfil());
+            SaveProfile = new RelayCommand(() => speichereProfil());
+            LoadProfile = new RelayCommand(() => ladeProfil());
+        }
 
+        public void neuesProfil()
+        {
+            aktprofile = new ProfileClass();
+        }
+
+        public void ladeProfil()
+        {
+            // Ort von Profil
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = false;
+            openFileDialog.Filter = "*.xml, *.*";
+            if (openFileDialog.ShowDialog() == true) { 
+            aktprofile.loadProfile(openFileDialog.FileName);
+            }
+
+        }
+
+        public void speichereProfil()
+        {
+            // Name für Profil und Ort für Profil
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            string name;
+
+            InputBox akt_input = new InputBox();
+
+            akt_input.ShowDialog();
+
+            if (akt_input.DialogResult == true)
+            {
+                name = akt_input.inputString;
+            }
+
+            Debugger.Break();
+
+            //string profilename = Microsoft.VisualBasic.Interaction.InputBox("Prompt", "Title", "Default", -1, -1);
+
+            //if (.Show() == true)
+            //{
+            //
+            //}
+            //
+            //if (saveFileDialog.ShowDialog() == true)
+            //aktprofile.saveProfile();
         }
 
         public void SetController()

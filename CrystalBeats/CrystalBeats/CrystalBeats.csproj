@@ -61,15 +61,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-
     <Compile Include="ControllerClass.cs" />
     <Compile Include="EngineClass.cs" />
-
+    <Compile Include="InputBox.xaml.cs">
+      <DependentUpon>InputBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KeyboardHook.cs" />
     <Compile Include="ProfileClass.cs" />
-
     <Compile Include="SequencerClass.cs" />
     <Compile Include="Timer.cs" />
     <Compile Include="ViewModel.cs" />
+    <Page Include="InputBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

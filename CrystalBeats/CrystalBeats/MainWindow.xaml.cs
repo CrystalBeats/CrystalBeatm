@@ -31,15 +31,10 @@ namespace CrystalBeats
         {
             InitializeComponent();
             cController = new Controller();
-            InitiallizeGamePad();
-            StartReadingThread();
+            //InitiallizeGamePad();
+            //StartReadingThread();
             
             this.DataContext = new ViewModel();
-        }
-
-
-<<<<<<< HEAD
-=======
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -76,7 +71,7 @@ namespace CrystalBeats
             if (joystickGuid == Guid.Empty)
             {
                 Console.WriteLine("No joystick/Gamepad found.");
-                Console.ReadKey();
+                //Console.ReadKey();
                 Environment.Exit(1);
             }
 
@@ -110,6 +105,5 @@ namespace CrystalBeats
                 
             }
         }
->>>>>>> Backend
     }
 }

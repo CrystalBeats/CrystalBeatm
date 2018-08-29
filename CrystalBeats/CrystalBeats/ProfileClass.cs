@@ -25,11 +25,19 @@ namespace CrystalBeats
         };
 
         string path, profilepath;
+        string presetprofile = @"C:\Users\user\Documents\GitHub\CrystalBeatm\CrystalBeats\presetprofile.ini";
         Configuration config = new Configuration();
         
         public ProfileClass(Sequence[] sequences)
         {
-            bars = sequences;
+            for (int i = 0; i < sequences.Length; i++)
+            {
+                bars[i] = sequences[i];
+            }
+            string testprofile = @"C:\Users\user\Documents\GitHub\CrystalBeatm\CrystalBeats\Penis.ini";
+            string tosave = @"C:\Users\user\Documents\GitHub\CrystalBeatm\CrystalBeats\tosave.ini";
+            loadProfile(testprofile);
+            saveProfile(tosave);
         }
         // Getter setter accentedbeats
         public int[,] getAccentedBeats(){return accentedBeats;}
@@ -73,16 +81,17 @@ namespace CrystalBeats
             };
 
             //Set profile values for bars
-            setBpms(sectionG["bpm"].IntValue);
+            int inibpm = Int32.Parse(sectionG["bpm"].StringValue);
+            setBpms(inibpm);
             setSounds(sections);
             setVolumes(sections);
             setRests(sections);
             setAccentedBeats(sections);
 
         }
-        public void saveProfile(string profile, string filetosave)
+        public void saveProfile(string filetosave)
         {
-            config = Configuration.LoadFromFile(filetosave);
+            config = Configuration.LoadFromFile(presetprofile);
             config["General"]["bpm"].IntValue = bars[1].BPM;
             // Save Bars
             for(int i = 0; i < bars.Length; i++)
@@ -104,7 +113,10 @@ namespace CrystalBeats
 
         public void setBpms(int val)
         {
-            foreach(Sequence bar in bars){bar.BPM = val;}
+            for (int i = 0; i < bars.Length; i++)
+            {
+                bars[i].BPM = val;
+            }
         }
         public void setSounds(SharpConfig.Section[] sections)
         {

@@ -32,9 +32,11 @@ namespace CrystalBeats
         {
             InitializeComponent();
             cController = new Controller();
-          //  InitiallizeGamePad();
-           // StartReadingThread();
+
             KeyboardHook.CreateHook(KeyReader);
+            //InitiallizeGamePad();
+            //StartReadingThread();
+
             this.DataContext = new ViewModel();
         }
 
@@ -73,6 +75,8 @@ namespace CrystalBeats
             {
                 Console.WriteLine("No joystick/Gamepad found.");
                 Console.ReadKey();
+                Environment.Exit(1);
+
             }
 
             // Instantiate the joystick
@@ -100,9 +104,9 @@ namespace CrystalBeats
                 var datas = joystick.GetBufferedData();
                 foreach (var state in datas)
                 {
-                   if (state.Value == 128) cController.sendCommand(state.Offset.ToString());
+                    if (state.Value == 128) cController.sendCommand(state.Offset.ToString());
                 }
-                
+
             }
         }
 
@@ -378,5 +382,7 @@ namespace CrystalBeats
                 default: break;
             }
         }
-        }
+    }
+    }
+
 }

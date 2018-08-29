@@ -19,10 +19,21 @@ namespace CrystalBeats
     {
         string strKey;
         Sequencer sqSequencer;
+        ProfileClass pProfile;
         public Controller()
         {
             strKey = "";
             sqSequencer = new Sequencer();
+            Sequence[] sequences = new Sequence[] {
+                sqSequencer.sqSequences[0],
+                sqSequencer.sqSequences[1],
+                sqSequencer.sqSequences[2],
+                sqSequencer.sqSequences[3],
+                sqSequencer.sqSequences[4],
+                sqSequencer.sqSequences[5],
+                sqSequencer.sqSequences[6],
+                sqSequencer.sqSequences[7]};
+            pProfile = new ProfileClass(sequences);
         }
 
         public void turnSequence(int iSequence)

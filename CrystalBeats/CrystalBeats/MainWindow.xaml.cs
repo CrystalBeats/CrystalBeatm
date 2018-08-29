@@ -30,9 +30,6 @@ namespace CrystalBeats
             this.DataContext = new ViewModel();
         }
 
-        private void Expander_Expanded(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }

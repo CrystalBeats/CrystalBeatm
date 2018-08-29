@@ -98,8 +98,9 @@
                                                                 </Grid.ColumnDefinitions>
 
                                                                 <TextBlock Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">AKT BPM </TextBlock>
-                                                                <TextBlock Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontStretch="Expanded" FontSize="35">NAME PROFIL + MAYBE TITLE</TextBlock>
-                                                                <TextBlock Grid.Column="3" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontStretch="Expanded" FontSize="35">TIME</TextBlock>
+                                                                <TextBlock  Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">NAME PROFIL</TextBlock>
+                                                                <TextBlock Text="{Binding AktTitle}" Grid.Column="2" Grid.ColumnSpan="2" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"></TextBlock>
+                                                                <TextBlock Grid.Column="3" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontStretch="Expanded" FontSize="35" Visibility="Hidden">TIME</TextBlock>
                                                             </Grid>
                                                         </Border>
                                                         <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1" Margin="10 0">
@@ -227,18 +228,18 @@
                                 <Border Grid.Row="1" Padding="10" BorderBrush="Wheat" BorderThickness="1">
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                                         <Button Width="75" Height="25" Margin="5 0" Command="{Binding SelectSound}">1</Button>
-                                        <Button Width="75" Height="25" Margin="5 0">2</Button>
-                                        <Button Width="75" Height="25" Margin="5 0">3</Button>
-                                        <Button Width="75" Height="25" Margin="5 0">4</Button>
-                                        <Button Width="75" Height="25" Margin="5 0">5</Button>
-                                        <Button Width="75" Height="25" Margin="5 0">6</Button>
-                                        <Button Width="75" Height="25" Margin="5 0">7</Button>
-                                        <Button Width="75" Height="25" Margin="5 0">8</Button>
+                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="2" Width="75" Height="25" Margin="5 0">2</Button>
+                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="3" Width="75" Height="25" Margin="5 0">3</Button>
+                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="4" Width="75" Height="25" Margin="5 0">4</Button>
+                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="5"  Width="75" Height="25" Margin="5 0">5</Button>
+                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="6" Width="75" Height="25" Margin="5 0">6</Button>
+                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="7" Width="75" Height="25" Margin="5 0">7</Button>
+                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="8" Width="75" Height="25" Margin="5 0">8</Button>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="2" BorderBrush="Yellow" BorderThickness="1" Padding="10 3" Visibility="Hidden">
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
+                                        <Rectangle  Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
                                         <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
                                         <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
                                         <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
@@ -258,26 +259,26 @@
                                 </Border>
                                 <Border Grid.Row="3" BorderBrush="Green" BorderThickness="1">
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button x:Name="bt1"  Height="75" Width="50" Margin="3 0">
+                                        <Button x:Name="bt1"  Height="75" Width="50" Margin="3 0" Command="{Binding SetSpezificSchlag}" CommandParameter="0">
                                             <StackPanel> 
                                                 <Label Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center">1</Label>
                                             </StackPanel>
                                         </Button>
-                                        <Button Height="75" Width="50" Margin="3 0">2</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">3</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">4</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">5</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">6</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">7</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">8</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">9</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">10</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">11</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">12</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">13</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">14</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">15</Button>
-                                        <Button Height="75" Width="50" Margin="3 0">16</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="1" Height="75" Width="50" Margin="3 0">2</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="2" Height="75" Width="50" Margin="3 0">3</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="3" Height="75" Width="50" Margin="3 0">4</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="4" Height="75" Width="50" Margin="3 0">5</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="5" Height="75" Width="50" Margin="3 0">6</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="6" Height="75" Width="50" Margin="3 0">7</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="7" Height="75" Width="50" Margin="3 0">8</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="8" Height="75" Width="50" Margin="3 0">9</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="9" Height="75" Width="50" Margin="3 0">10</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="10" Height="75" Width="50" Margin="3 0">11</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="11" Height="75" Width="50" Margin="3 0">12</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="12" Height="75" Width="50" Margin="3 0">13</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="13" Height="75" Width="50" Margin="3 0">14</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="14" Height="75" Width="50" Margin="3 0">15</Button>
+                                        <Button Command="{Binding SelectSchlag}" CommandParameter="15" Height="75" Width="50" Margin="3 0">16</Button>
                                     </StackPanel>
                                 </Border>
                             </Grid>

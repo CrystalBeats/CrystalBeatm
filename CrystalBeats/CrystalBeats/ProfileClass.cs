@@ -11,7 +11,6 @@ namespace CrystalBeats
 {
     public class ProfileClass
     {
-        string soundactive, activeprofile;
         private Sequence[] bars = new Sequence[8];
         // 8 bars x 16 beats
         int[,] accentedBeats = new int[,] {
@@ -24,8 +23,6 @@ namespace CrystalBeats
             {  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
             {  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
         };
-
-        string path, profilepath;
         // Temporärer Pfad
         string presetprofile = @"..\..\..\Profiles\presetprofile.ini";
         Configuration config = new Configuration();
@@ -33,7 +30,6 @@ namespace CrystalBeats
         // Constructor
         public ProfileClass(Sequence[] sequences)
         {
-            Console.WriteLine(presetprofile);
             for (int i = 0; i < sequences.Length; i++)
             {
                 bars[i] = sequences[i];

@@ -227,7 +227,7 @@ namespace CrystalBeats
             this.AktTitle = sequencer.ActiveSequence.Soundname;
 
             //SetTitleString();
-            controller.PlayOnce(sequencer);
+            controller.PlayOnce();
 
         }
         

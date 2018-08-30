@@ -224,17 +224,6 @@ namespace CrystalBeats
 
         void ActivateSequenz()
         {
-<<<<<<< HEAD
-            //if (sequencer.sqBar1.Soundname == String.Empty)
-           // { 
-           //  sequencer.sqBar1.Soundname = controller.setSoundFromFile();
-            
-            // }
-            Debugger.Break();
-
-            this.AktTitle = sequencer.ActiveSequence.Soundname;
-=======
->>>>>>> Frontend
 
             controller.sqSequencer.setActiveSequence(this.Sequenz);
 

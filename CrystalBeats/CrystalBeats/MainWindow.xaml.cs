@@ -387,10 +387,4 @@ namespace CrystalBeats
 
     }
 }
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> Frontend
 

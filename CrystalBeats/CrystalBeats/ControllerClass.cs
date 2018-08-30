@@ -125,27 +125,38 @@ namespace CrystalBeats
                     break;
                 case ("1"): //HopScotch Feld wie in Array
                     sqSequencer.aSequences[0].PlaySound();
+                    sqSequencer.setActiveSequence(0);
                     break;
                 case "2":
                     sqSequencer.aSequences[1].PlaySound();
+                    sqSequencer.setActiveSequence(1);
                     break;
                 case "3":
                     sqSequencer.aSequences[2].PlaySound();
+                    sqSequencer.setActiveSequence(2);
                     break;
                 case "4":
                     sqSequencer.aSequences[3].PlaySound();
+                    sqSequencer.setActiveSequence(3);
                     break;
                 case "5":
                     sqSequencer.aSequences[4].PlaySound();
+                    sqSequencer.setActiveSequence(4);
                     break;
                 case "6":
                     sqSequencer.aSequences[5].PlaySound();
+                    sqSequencer.setActiveSequence(5);
                     break;
                 case "7":
                     sqSequencer.aSequences[6].PlaySound();
+                    sqSequencer.setActiveSequence(6);
                     break;
                 case "8":
                     sqSequencer.aSequences[7].PlaySound();
+                    sqSequencer.setActiveSequence(7);
+                    break;
+                case "p":
+                    PauseBar();
                     break;
                 default:
                     break;

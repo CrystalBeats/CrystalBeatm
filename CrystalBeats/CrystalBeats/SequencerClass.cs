@@ -28,6 +28,7 @@ namespace CrystalBeats
             sqSequences = new Sequence[] {new Sequence("Bar1"), new Sequence("Bar2"), new Sequence("Bar3"), new Sequence("Bar4"), new Sequence("Bar5"), new Sequence("Bar6"), new Sequence("Bar7"), new Sequence("Bar8") };
 
             sqActiveSequence = sqSequences[0];
+            syncBPM();
         }
 
         public void Play()
@@ -44,6 +45,21 @@ namespace CrystalBeats
             {
                 sqSequences[i].Stop();
             }
+        }
+
+        public int BPM
+        {
+            get { return iBPM; }
+            set
+            {
+                iBPM = value;
+                syncBPM();
+            }
+        }
+
+        private void syncBPM()
+        {
+            for (int i = 0; i < aSequences.Length; i++) aSequences[i].BeatsPerSequence = iBPM;
         }
 
         public void PlaySound()
@@ -96,13 +112,14 @@ namespace CrystalBeats
         {
             this.tTimer = new Timer();
             this.tTimer.Mode = TimerMode.Periodic;
-            this.tTimer.Tick += new EventHandler(this.cbtTimer_Tick);
+            this.tTimer.Tick += new EventHandler(this.tTimer_Tick);
 
             this.iDB = 15;
             this.iBPM = 160;
             this.iCounter = 1;
             this.iBeatsPerSequence = 16;
             this.SequenceLength = 16;
+
             this.bRested = false;
             this.strBarName = strBarname;
             this.strSoundslot = @"C:\Users\chokemedaddy\source\repos\CrystalBeatmachine\CrystalBeatm\CrystalBeats\CrystalBeats\bin\Debug\Sounds\Sprueche\vorwaerts.wav";
@@ -168,7 +185,7 @@ namespace CrystalBeats
             iCounter = 1;
         }
 
-        private void cbtTimer_Tick(object sender, EventArgs e)
+        private void tTimer_Tick(object sender, EventArgs e)
         {
             if (iCounter > iBeatsPerSequence)
             {

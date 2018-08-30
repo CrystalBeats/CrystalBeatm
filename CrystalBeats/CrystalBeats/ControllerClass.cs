@@ -75,6 +75,25 @@ namespace CrystalBeats
             sqSequencer.PlaySound();
         }
 
+        private void PauseBar()
+        {
+            sqSequencer.aSequences[iActiveBar].Rested = !sqSequencer.aSequences[iActiveBar].Rested;
+        }
+
+        private int iActiveBar
+        {
+            get
+            {
+                int x = 0;
+                for (int i = 0; i<sqSequencer.aSequences.Length; i++)
+                {
+                    x = (sqSequencer.aSequences[i].Name == sqSequencer.ActiveSequence.Name) ? i : 1337;
+                }
+
+                return x;
+            }
+        }
+
         public void sendCommand(string strCommand)
         {
             string asd = "";

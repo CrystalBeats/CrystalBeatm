@@ -134,7 +134,25 @@
                                                                     </StackPanel>
                                                                 </Border>
 
-                                                                <Border Grid.Column="1" Background="White"></Border>
+                                                                <Border Grid.Column="1" Background="Transparent">
+                                                                    <Grid>
+                                                                        <Grid.RowDefinitions>
+                                                                            <RowDefinition Height=".1*"></RowDefinition>
+                                                                            <RowDefinition></RowDefinition>
+                                                                            <RowDefinition Height=".1*"></RowDefinition>
+                                                                        </Grid.RowDefinitions>
+
+
+                                                                        <Border Grid.Row="1" Margin="0 10 0 5">
+                                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                                                
+                                                                                <TextBox Name="tb_BPM" Width="100" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">190</TextBox>
+                                                                                <Button Padding="10 0 10 0" Margin="10 0" Command="{Binding SetDB}" Width="250">Set dB</Button>
+                                                                            </StackPanel>
+                                                                        </Border>
+
+                                                                    </Grid>
+                                                                </Border>
                                                             </Grid>
                                                         </Border>
                                                         <Border Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="10 0">
@@ -189,13 +207,7 @@
                                                             <ColumnDefinition></ColumnDefinition>
                                                         </Grid.ColumnDefinitions>
 
-                                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
-                                                            <Button Grid.Column="1" Padding="10 0 10 0" Margin="10 0"> &lt; </Button>
-                                                            <Slider Grid.Column="1" Width="100" VerticalContentAlignment="Stretch" VerticalAlignment="Center"></Slider>
-                                                            <Button Grid.Column="1" Padding="10 0 10 0" Margin="10 0"> &gt; </Button>
-                                                            <TextBox Width="100" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">190</TextBox>
-                                                            <Button Padding="10 0 10 0" Margin="10 0">Set BPM</Button>
-                                                        </StackPanel>
+                                                       
 
                                                         
                                                         <Button Grid.Column="3" Command="{Binding NewProfile}" Padding="10 0 10 0"> Profil erstellen </Button>

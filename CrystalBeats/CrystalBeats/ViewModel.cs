@@ -143,6 +143,8 @@ namespace CrystalBeats
 
         public ICommand SelectSchlag { get; set; }
 
+        public ICommand SetDB { get; set; }
+
         public ViewModel()
         {
             // aktprofile 
@@ -162,10 +164,18 @@ namespace CrystalBeats
 
       //      SelectSoundParameter = new RelayParameterizedCommand((parameter) => SetSpezificSequenz(parameter));
             SelectSchlag = new RelayParameterizedCommand(parameter => ActivateTurnAccent(parameter));
+            SetDB = new RelayCommand(() => SetDBValue());
 
             int i = 0;
 
             ActivateSequenz((short)i);
+        }
+
+        void SetDBValue()
+        {
+            string i = ((MainWindow)Application.Current.MainWindow).tb_BPM.Text;
+            cController.sqSequencer.BPM = int.Parse(i);
+
         }
 
         void ActivateTurnAccent(object parameter)

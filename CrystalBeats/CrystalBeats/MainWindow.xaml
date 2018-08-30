@@ -120,21 +120,20 @@
                                                             </Grid>
                                                         </Border>
                                                         <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1" Margin="10 0">
-                                                            <Grid ShowGridLines="True">
+                                                            <Grid ShowGridLines="False">
                                                                 <Grid.ColumnDefinitions>
                                                                     <ColumnDefinition></ColumnDefinition>
                                                                     <ColumnDefinition></ColumnDefinition>
                                                                 </Grid.ColumnDefinitions>
 
-                                                                <Border BorderBrush="White" BorderThickness="5">
-                                                                    <StackPanel Orientation="Horizontal">
+                                                                <Border BorderBrush="Black" BorderThickness="1">
+                                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                                                     <Label Foreground="White" FontSize="24">Name Soundstück </Label>
-                                                                        <Button Width="50">&lt;</Button>
-                                                                        <Button Width="50">&gt;</Button>
+                    
                                                                     </StackPanel>
                                                                 </Border>
 
-                                                                <Border Grid.Column="1" Background="Transparent">
+                                                                <Border Grid.Column="1" Background="Transparent" BorderBrush="Black" BorderThickness="1">
                                                                     <Grid>
                                                                         <Grid.RowDefinitions>
                                                                             <RowDefinition Height=".1*"></RowDefinition>
@@ -169,7 +168,7 @@
                                                                 
                                                                 <Border Grid.Column="2" HorizontalAlignment="Center">
                                                                     <StackPanel Orientation="Horizontal">
-                                                                        <TextBlock FontSize="23" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                                        <TextBlock x:Name="block_schlag" FontSize="23" VerticalAlignment="Center" HorizontalAlignment="Center">
                                                                             <Run Foreground="Wheat">1</Run>
                                                                             <Run>2</Run>
                                                                             <Run>3</Run>

@@ -263,6 +263,9 @@ namespace CrystalBeats
             //Array
             //sequencer.ActiveSequence.PlayedBeats
             
+           ((MainWindow)Application.Current.MainWindow).border_Sequenz.Children.OfType<Button>();
+
+
         }
 
         public void SetSpezificSequenz(object parameter)
@@ -273,6 +276,11 @@ namespace CrystalBeats
 
             
             
+        }
+
+        public void ControllerSendCommand(string key)
+        {
+            cController.sendCommand(key);
         }
 
         public async Task SetSpezificSchlag(object parameter)

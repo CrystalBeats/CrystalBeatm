@@ -102,9 +102,10 @@ namespace CrystalBeats
             this.iBPM = 160;
             this.iCounter = 1;
             this.iBeatsPerSequence = 16;
+            this.SequenceLength = 16;
             this.bRested = false;
             this.strBarName = strBarname;
-            this.strSoundslot = @"C:\Users\chokemedaddy\Downloads\Berufsschule\adamnsampler-master\KORG WPF\Resources\acerBrandNeu14.wav";
+            this.strSoundslot = @"C:\Users\chokemedaddy\source\repos\CrystalBeatmachine\CrystalBeatm\CrystalBeats\CrystalBeats\bin\Debug\Sounds\Sprueche\vorwaerts.wav";
 
             this.iPlayedBeats = new int[] { 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 };
 

@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace CrystalBeats
 {
@@ -227,6 +229,7 @@ namespace CrystalBeats
 
             controller.sqSequencer.setActiveSequence(this.Sequenz);
 
+            SetzeButtonsSequenz(this.Sequenz);
         }
 
     
@@ -372,7 +375,7 @@ namespace CrystalBeats
         public int Sequenz
         {
             get { return mSequenz; }
-            set { mSequenz = value; onPropertyChanged("Sequenz"); }
+            set { mSequenz = value; onPropertyChanged("Sequenz");  }
         }
 
         private int mSchlag;
@@ -380,11 +383,48 @@ namespace CrystalBeats
         public int Schlag
         {
             get { return mSchlag; }
-            set { mSchlag = value; onPropertyChanged("Schlag"); }
+            set { mSchlag = value; onPropertyChanged("Schlag"); SetzeButtonBackground(value); }
         }
 
 
         #endregion
+
+        void SetzeButtonsSequenz(object value)
+        {
+            //var i = (int)value; 
+            //var compare = i.ToString();
+
+            //foreach (Button button in ((MainWindow)Application.Current.MainWindow).border_Sequenz.Children.OfType<Button>())
+            //{
+
+            //    if ((string)button.Tag == compare)
+            //    {
+            //        button.Background = Brushes.Gray;
+            //        break;
+            //    }
+
+            //}
+           
+        }
+
+        void SetzeButtonBackground(object value)
+        {
+
+            var i = (int)value;
+            var compare = (short)i;
+
+            foreach (Button button in ((MainWindow)Application.Current.MainWindow).Border_Buttons.Children.OfType<Button>())
+            {
+
+                if ((short)button.CommandParameter == compare)
+                {
+                    button.Background = controller.turnColor(this.Sequenz, this.Schlag);
+                    break;
+                }
+
+
+            }
+        }
 
         #endregion
     }

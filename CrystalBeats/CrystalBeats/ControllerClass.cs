@@ -54,10 +54,10 @@ namespace CrystalBeats
             sqSequencer.aSequences[iSequence].PlayedBeats[iAccent] = (sqSequencer.aSequences[iSequence].PlayedBeats[iAccent] == 0) ? 1 : 0;
         }
 
-        public string setSoundFromFile()
+        public void setSoundFromFile(int iSequence)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            return (openFileDialog.ShowDialog() == true) ? openFileDialog.FileName : "";
+            sqSequencer.aSequences[iSequence].Soundname = (openFileDialog.ShowDialog() == true) ? openFileDialog.FileName : "";
         }
 
         public SolidColorBrush turnColor(int iSequence, int iAccent)

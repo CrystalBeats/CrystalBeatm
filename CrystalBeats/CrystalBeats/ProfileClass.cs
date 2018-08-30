@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,15 +26,22 @@ namespace CrystalBeats
         };
 
         string path, profilepath;
-        string presetprofile = @"C:\Users\user\Documents\GitHub\CrystalBeatm\CrystalBeats\presetprofile.ini";
+        // Temporärer Pfad
+        string presetprofile = @"..\..\..\Profiles\presetprofile.ini";
         Configuration config = new Configuration();
         
+        // Constructor
         public ProfileClass(Sequence[] sequences)
         {
+            Console.WriteLine(presetprofile);
             for (int i = 0; i < sequences.Length; i++)
             {
                 bars[i] = sequences[i];
             }
+
+            // Speicherbeispiel
+            /*string saveto = @"..\..\..\Profiles\tosave.ini";
+            saveProfile(saveto);*/
         }
         // Getter setter accentedbeats
         public int[,] getAccentedBeats(){return accentedBeats;}

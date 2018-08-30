@@ -252,7 +252,11 @@
 
                                 <Border Grid.Row="1" Padding="10" BorderBrush="Wheat" BorderThickness="1">
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Button Width="75" Height="25" Margin="5 0" Command="{Binding SequenzKommand}">1</Button>
+                                        <Button Width="75" Height="25" Margin="5 0" Command="{Binding SequenzKommand}" Content="1">
+                                            <Button.InputBindings>
+                                                <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}"></MouseBinding>
+                                            </Button.InputBindings>
+                                        </Button>
                                         <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">2</Button>
                                         <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">3</Button>
                                         <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">4</Button>

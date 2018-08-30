@@ -127,6 +127,8 @@ namespace CrystalBeats
         public ICommand PlayCommand { get; set; }
         public ICommand SequenzKommand { get; set; }
 
+        public ICommand SelectSequenzKommand { get; set; }
+
         public ICommand NewProfile { get; set; }
         public ICommand SaveProfile { get; set; }
         public ICommand LoadProfile { get; set; }
@@ -144,8 +146,9 @@ namespace CrystalBeats
             //todo implementierung
 
             //PlayCommand = new RelayCommand(() => sequencer.Play());
-            SequenzKommand = new RelayCommand(() => SetSequenz());
-            //NewProfile = new RelayCommand(() => neuesProfil());
+            SequenzKommand = new RelayCommand(() => ActivateSequenz());
+            SelectSequenzKommand = new RelayCommand(() => SetSequenz());
+            //NewProfile = new RelayCommand(() => neu esProfil());
             //SaveProfile = new RelayCommand(() => speichereProfil());
             //LoadProfile = new RelayCommand(() => ladeProfil());
 
@@ -153,7 +156,10 @@ namespace CrystalBeats
             SelectSchlag = new RelayParameterizedCommand(async (parameter) => await SetSpezificSchlag(parameter));
         }
 
-      
+        public void SetSequenz()
+        {
+            controller.setSoundFromFile(Sequenz);
+        }
 
         public void ladeProfil()
         {
@@ -197,7 +203,7 @@ namespace CrystalBeats
             //aktprofile.saveProfile();
         }
 
-        void SetSequenz()
+        void ActivateSequenz()
         {
 
             controller.sqSequencer.setActiveSequence(this.Sequenz);

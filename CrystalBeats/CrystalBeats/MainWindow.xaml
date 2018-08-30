@@ -254,6 +254,9 @@
                                 <Border Grid.Row="1" Padding="10" BorderBrush="Wheat" BorderThickness="1">
                                     <StackPanel x:Name="border_Sequenz" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                                         <Button Width="75" Height="25" Margin="5 0" Command="{Binding SequenzKommand}" Content="1" Tag="0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>0</s:Int16>
+                                            </Button.CommandParameter>
                                             <Button.InputBindings>
                                                 <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}">
                                                     <MouseBinding.CommandParameter>
@@ -262,7 +265,10 @@
                                                 </MouseBinding>
                                             </Button.InputBindings>
                                         </Button>
-                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="2">
+                                        <Button Command="{Binding SequenzKommand}"  Width="75" Height="25" Margin="5 0" Content="2">
+                                            <Button.CommandParameter>
+                                                <s:Int16>1</s:Int16>
+                                            </Button.CommandParameter>
                                             <Button.InputBindings>
                                                 <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
                                                     <MouseBinding.CommandParameter>
@@ -272,6 +278,9 @@
                                             </Button.InputBindings>
                                         </Button>
                                         <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="3">
+                                            <Button.CommandParameter>
+                                                <s:Int16>2</s:Int16>
+                                            </Button.CommandParameter>
                                             <Button.InputBindings>
                                                 <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
                                                     <MouseBinding.CommandParameter>
@@ -280,7 +289,10 @@
                                                 </MouseBinding>
                                             </Button.InputBindings>
                                         </Button>
-                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="4">
+                                        <Button Command="{Binding SequenzKommand}"  Width="75" Height="25" Margin="5 0" Content="4">
+                                            <Button.CommandParameter>
+                                                <s:Int16>3</s:Int16>
+                                            </Button.CommandParameter>
                                             <Button.InputBindings>
                                                 <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
                                                     <MouseBinding.CommandParameter>
@@ -290,6 +302,9 @@
                                             </Button.InputBindings>
                                         </Button>
                                         <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="5">
+                                            <Button.CommandParameter>
+                                                <s:Int16>4</s:Int16>
+                                            </Button.CommandParameter>
                                             <Button.InputBindings>
                                                 <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
                                                     <MouseBinding.CommandParameter>
@@ -299,6 +314,9 @@
                                             </Button.InputBindings>
                                         </Button>
                                         <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="6">
+                                            <Button.CommandParameter>
+                                                <s:Int16>5</s:Int16>
+                                            </Button.CommandParameter>
                                             <Button.InputBindings>
                                                 <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
                                                     <MouseBinding.CommandParameter>
@@ -307,7 +325,10 @@
                                                 </MouseBinding>
                                             </Button.InputBindings>
                                         </Button>
-                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="7">
+                                        <Button Command="{Binding SequenzKommand}"  Width="75" Height="25" Margin="5 0" Content="7">
+                                            <Button.CommandParameter>
+                                                <s:Int16>6</s:Int16>
+                                            </Button.CommandParameter>
                                             <Button.InputBindings>
                                                 <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
                                                     <MouseBinding.CommandParameter>
@@ -316,7 +337,10 @@
                                                 </MouseBinding>
                                             </Button.InputBindings>
                                         </Button>
-                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="8">
+                                        <Button Command="{Binding SequenzKommand}"  Width="75" Height="25" Margin="5 0" Content="8">
+                                            <Button.CommandParameter>
+                                                <s:Int16>7</s:Int16>
+                                            </Button.CommandParameter>
                                             <Button.InputBindings>
                                                 <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
                                                     <MouseBinding.CommandParameter>

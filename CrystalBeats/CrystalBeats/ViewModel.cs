@@ -154,7 +154,7 @@ namespace CrystalBeats
             PlayCommand = new RelayCommand(() => cController.sqSequencer.Play());
             StopCommand = new RelayCommand(() => cController.sqSequencer.Stop());
 
-            SequenzKommand = new RelayCommand(() => ActivateSequenz());
+            SequenzKommand = new RelayParameterizedCommand((parameter) => ActivateSequenz(parameter));
             SelectSequenzKommand = new RelayParameterizedCommand(parameter => SetSequenz(parameter));
             //NewProfile = new RelayCommand(() => neu esProfil());
             //SaveProfile = new RelayCommand(() => speichereProfil());
@@ -162,6 +162,10 @@ namespace CrystalBeats
 
       //      SelectSoundParameter = new RelayParameterizedCommand((parameter) => SetSpezificSequenz(parameter));
             SelectSchlag = new RelayParameterizedCommand(parameter => ActivateTurnAccent(parameter));
+
+            int i = 0;
+
+            ActivateSequenz((short)i);
         }
 
         void ActivateTurnAccent(object parameter)
@@ -172,16 +176,21 @@ namespace CrystalBeats
             this.Schlag = (int)i;
 
             cController.turnAccent(this.Sequenz, this.Schlag);
+            SetzeButtonBackground(this.Schlag);
+
+
         }
 
-        public void SetSequenz(object parameter)
+        public void SetSequenz(object parameter, bool setFile = true)
         {
 
             var i = (short)parameter;
 
             this.Sequenz = (int)i;
 
+            if (setFile) { 
             cController.setSoundFromFile(this.Sequenz);
+            } 
         }
         
         public void ladeProfil()
@@ -226,8 +235,10 @@ namespace CrystalBeats
             //aktprofile.saveProfile();
         }
 
-        void ActivateSequenz()
+        void ActivateSequenz(object parameter)
         {
+
+            SetSequenz(parameter, false);
 
             cController.sqSequencer.setActiveSequence(this.Sequenz);
 
@@ -372,11 +383,11 @@ namespace CrystalBeats
         //
         #region Controller
 
-        private int mSequenz;
+        private int mSequenz = 0;
 
         public int Sequenz
         {
-            get { SetzeButtonsSequenz(mSequenz); return mSequenz; }
+            get { return mSequenz; }
             set { mSequenz = value; onPropertyChanged("Sequenz");  }
         }
 
@@ -394,7 +405,30 @@ namespace CrystalBeats
         void SetzeButtonsSequenz(int SequenzNr)
         {
 
-            Debugger.Break();
+            foreach (Button button in ((MainWindow)Application.Current.MainWindow).border_Sequenz.Children.OfType<Button>())
+            {
+                if ((short)button.CommandParameter == SequenzNr)
+                {
+                    button.Background = Brushes.Purple;
+
+                   
+                    foreach (Button beatbutton in ((MainWindow)Application.Current.MainWindow).Border_Buttons.Children.OfType<Button>())
+                    {
+                        beatbutton.Background = cController.turnColor(SequenzNr, (int)(short)beatbutton.CommandParameter);
+                    }
+
+
+
+                        continue;
+                }
+                else
+                {
+                    if (button.Background != Brushes.Gray)
+                    {
+                        button.Background = Brushes.Gray;
+                    }
+                }
+            }
            
             
         }

@@ -36,6 +36,8 @@ namespace CrystalBeats
             //StartReadingThread();
 
             this.DataContext = new ViewModel();
+
+
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)

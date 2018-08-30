@@ -62,7 +62,7 @@ namespace CrystalBeats
 
         public SolidColorBrush turnColor(int iSequence, int iAccent)
         {
-            return (sqSequencer.aSequences[iSequence].PlayedBeats[iAccent] == 0) ? Brushes.Gray : Brushes.Purple;
+            return (sqSequencer.aSequences[iSequence].PlayedBeats[iAccent] == 0) ? Brushes.Gray : Brushes.Purple ;
         }
 
         public void setActiveBar(int iSequence)

@@ -44,6 +44,8 @@ namespace CrystalBeats
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             cController.sendCommand(strKey);
+            Debugger.Break();
+
         }
 
         private void StartReadingThread()

@@ -13,14 +13,14 @@ using System.Windows.Media;
 
 namespace CrystalBeats
 {
-    class ViewModel: INotifyPropertyChanged
+   public class ViewModel: INotifyPropertyChanged
     {
 
         //Frontend: 
         //
 
         #region Properties für Backend - Stuff
-        Controller controller;
+        public Controller cController;
 
         #endregion
 
@@ -145,12 +145,12 @@ namespace CrystalBeats
         {
             // aktprofile 
 
-            controller = new Controller();
+            cController = new Controller();
 
             //todo implementierung
 
-            PlayCommand = new RelayCommand(() => controller.sqSequencer.Play());
-            StopCommand = new RelayCommand(() => controller.sqSequencer.Stop());
+            PlayCommand = new RelayCommand(() => cController.sqSequencer.Play());
+            StopCommand = new RelayCommand(() => cController.sqSequencer.Stop());
 
             SequenzKommand = new RelayCommand(() => ActivateSequenz());
             SelectSequenzKommand = new RelayParameterizedCommand(parameter => SetSequenz(parameter));
@@ -169,7 +169,7 @@ namespace CrystalBeats
 
             this.Schlag = (int)i;
 
-            controller.turnAccent(this.Sequenz, this.Schlag);
+            cController.turnAccent(this.Sequenz, this.Schlag);
         }
 
         public void SetSequenz(object parameter)
@@ -179,7 +179,7 @@ namespace CrystalBeats
 
             this.Sequenz = (int)i;
 
-            controller.setSoundFromFile(this.Sequenz);
+            cController.setSoundFromFile(this.Sequenz);
         }
         
         public void ladeProfil()
@@ -227,7 +227,7 @@ namespace CrystalBeats
         void ActivateSequenz()
         {
 
-            controller.sqSequencer.setActiveSequence(this.Sequenz);
+            cController.sqSequencer.setActiveSequence(this.Sequenz);
 
             SetzeButtonsSequenz(this.Sequenz);
         }
@@ -374,7 +374,7 @@ namespace CrystalBeats
 
         public int Sequenz
         {
-            get { return mSequenz; }
+            get { SetzeButtonsSequenz(mSequenz); return mSequenz; }
             set { mSequenz = value; onPropertyChanged("Sequenz");  }
         }
 
@@ -389,22 +389,12 @@ namespace CrystalBeats
 
         #endregion
 
-        void SetzeButtonsSequenz(object value)
+        void SetzeButtonsSequenz(int SequenzNr)
         {
-            //var i = (int)value; 
-            //var compare = i.ToString();
 
-            //foreach (Button button in ((MainWindow)Application.Current.MainWindow).border_Sequenz.Children.OfType<Button>())
-            //{
-
-            //    if ((string)button.Tag == compare)
-            //    {
-            //        button.Background = Brushes.Gray;
-            //        break;
-            //    }
-
-            //}
+            Debugger.Break();
            
+            
         }
 
         void SetzeButtonBackground(object value)
@@ -418,7 +408,7 @@ namespace CrystalBeats
 
                 if ((short)button.CommandParameter == compare)
                 {
-                    button.Background = controller.turnColor(this.Sequenz, this.Schlag);
+                    button.Background = cController.turnColor(this.Sequenz, this.Schlag);
                     break;
                 }
 

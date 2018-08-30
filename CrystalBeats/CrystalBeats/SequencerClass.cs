@@ -122,7 +122,7 @@ namespace CrystalBeats
             this.bRested = false;
             this.strBarName = strBarname;
 
-           // this.strSoundslot = @"C:\Users\chokemedaddy\source\repos\CrystalBeatmachine\CrystalBeatm\CrystalBeats\CrystalBeats\bin\Debug\Sounds\Sprueche\vorwaerts.wav";
+            this.strSoundslot = @"C:\Users\chokemedaddy\source\repos\CrystalBeatmachine\CrystalBeatm\CrystalBeats\CrystalBeats\bin\Debug\Sounds\Sprueche\vorwaerts.wav";
 
 
             this.iPlayedBeats = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };

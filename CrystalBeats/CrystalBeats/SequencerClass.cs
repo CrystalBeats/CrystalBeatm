@@ -21,7 +21,7 @@ namespace CrystalBeats
         public List<Sequence> colSequences;
         public Sequencer()
         {
-            iBPM = 160;
+            iBPM = 190;
             colSequences = new List<Sequence>();
             sqActiveSequence = new Sequence("");
 

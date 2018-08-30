@@ -14,8 +14,7 @@ namespace CrystalBeats
     {
         private int iBPM;
 
-        public Sequence sqBar1, sqBar2, sqBar3, sqBar4, sqBar5, sqBar6, sqBar7, sqBar8;
-        public Sequence[] sqSequences;
+        private Sequence[] sqSequences;
         public Sequence sqActiveSequence;
 
         public List<Sequence> colSequences;
@@ -59,7 +58,7 @@ namespace CrystalBeats
 
         private void syncBPM()
         {
-            for (int i = 0; i < aSequences.Length; i++) aSequences[i].BeatsPerSequence = iBPM;
+            for (int i = 0; i < sqSequences.Length; i++) sqSequences[i].BeatsPerSequence = iBPM;
         }
 
         public void PlaySound()

@@ -14,14 +14,13 @@ namespace CrystalBeats
     {
         private int iBPM;
 
-        public Sequence sqBar1, sqBar2, sqBar3, sqBar4, sqBar5, sqBar6, sqBar7, sqBar8;
-        public Sequence[] sqSequences;
+        private Sequence[] sqSequences;
         public Sequence sqActiveSequence;
 
         public List<Sequence> colSequences;
         public Sequencer()
         {
-            iBPM = 160;
+            iBPM = 190;
             colSequences = new List<Sequence>();
             sqActiveSequence = new Sequence("");
 
@@ -59,7 +58,7 @@ namespace CrystalBeats
 
         private void syncBPM()
         {
-            for (int i = 0; i < aSequences.Length; i++) aSequences[i].BeatsPerSequence = iBPM;
+            for (int i = 0; i < sqSequences.Length; i++) sqSequences[i].BeatsPerSequence = iBPM;
         }
 
         public void PlaySound()
@@ -194,10 +193,14 @@ namespace CrystalBeats
                 iCounter = 1;
             }
 
-            if (iPlayedBeats[iCounter - 1] != 0 && !bRested)
+            if (iPlayedBeats[iCounter - 1] != 0)
             {
-                sePlayer.StopAllSounds();
-                sePlayer.Play2D(strSoundslot);
+                if (!Rested)
+                {
+                   // sePlayer.StopAllSounds();
+                    sePlayer.Play2D(strSoundslot);
+                }
+                
             }
             iCounter++;
         }

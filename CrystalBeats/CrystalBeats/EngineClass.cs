@@ -8,7 +8,6 @@ namespace CrystalBeats
 {
     public class Engine
     {
-
         ProfileClass pProfile;
 
         public Controller cController;
@@ -27,7 +26,7 @@ namespace CrystalBeats
                 sSequencer.sqBar6,
                 sSequencer.sqBar7,
                 sSequencer.sqBar8};
-            pProfile = new ProfileClass(sequences);
+
         }
     }
 }

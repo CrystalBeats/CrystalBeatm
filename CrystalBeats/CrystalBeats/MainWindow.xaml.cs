@@ -40,12 +40,14 @@ namespace CrystalBeats
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
+
             bool isPressed = false;
             if (!isPressed)
             {
                 ((ViewModel)(this.DataContext)).cController.sendCommand(strKey);
                 isPressed = true;
             }
+
         }
 
         private void StartReadingThread()

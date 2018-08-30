@@ -13,7 +13,9 @@ using System.Windows.Media;
 
 namespace CrystalBeats
 {
+
     public class ViewModel: INotifyPropertyChanged
+
     {
 
         //Frontend: 
@@ -374,7 +376,7 @@ namespace CrystalBeats
 
         public int Sequenz
         {
-            get { return mSequenz; }
+            get { SetzeButtonsSequenz(mSequenz); return mSequenz; }
             set { mSequenz = value; onPropertyChanged("Sequenz");  }
         }
 
@@ -389,22 +391,12 @@ namespace CrystalBeats
 
         #endregion
 
-        void SetzeButtonsSequenz(object value)
+        void SetzeButtonsSequenz(int SequenzNr)
         {
-            //var i = (int)value; 
-            //var compare = i.ToString();
 
-            //foreach (Button button in ((MainWindow)Application.Current.MainWindow).border_Sequenz.Children.OfType<Button>())
-            //{
-
-            //    if ((string)button.Tag == compare)
-            //    {
-            //        button.Background = Brushes.Gray;
-            //        break;
-            //    }
-
-            //}
+            Debugger.Break();
            
+            
         }
 
         void SetzeButtonBackground(object value)
@@ -418,7 +410,7 @@ namespace CrystalBeats
 
                 if ((short)button.CommandParameter == compare)
                 {
-                    button.Background = controller.turnColor(this.Sequenz, this.Schlag);
+                    button.Background = cController.turnColor(this.Sequenz, this.Schlag);
                     break;
                 }
 

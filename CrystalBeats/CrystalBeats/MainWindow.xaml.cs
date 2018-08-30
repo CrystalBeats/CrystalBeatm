@@ -406,6 +406,12 @@ InitiallizeGamePad();
             }
         }
 
+        private void LiveModeButton_Click(object sender, RoutedEventArgs e)
+        {
+            xControl = ((ViewModel)(this.DataContext)).cController;
+        }
+
+   
     }
 }
 

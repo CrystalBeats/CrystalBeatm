@@ -246,7 +246,7 @@
                                     <Button Height="35" Width="100" >|&lt;</Button>
                                     <Button  x:Name="bt_Play" Command="{Binding PlayCommand}" Height="35" Width="200" Margin="10 2 10 5">Play / Pause</Button>
                                     <Button Command="{Binding StopCommand}" Height="35" Width="200" Margin="10 5 10 5">Stop</Button>
-                                    <Button Height="35"  Width="200" Margin="10 5 10 2">Record</Button>
+                                    <Button x:Name="LiveModeButton" Height="35"  Width="200" Margin="10 5 10 2" Click="LiveModeButton_Click">Record</Button>
                                 </StackPanel>
                             </Grid>
                         </Border>

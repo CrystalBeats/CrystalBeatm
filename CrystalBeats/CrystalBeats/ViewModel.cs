@@ -145,6 +145,8 @@ namespace CrystalBeats
 
         public ICommand SetDB { get; set; }
 
+
+
         public ViewModel()
         {
             // aktprofile 

@@ -382,6 +382,6 @@ namespace CrystalBeats
                 default: break;
             }
         }
-    
+    }
     }
 

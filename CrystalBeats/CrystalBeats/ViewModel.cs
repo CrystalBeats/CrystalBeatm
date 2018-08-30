@@ -219,7 +219,7 @@ namespace CrystalBeats
         {
             //if (sequencer.sqBar1.Soundname == String.Empty)
            // { 
-            sequencer.sqBar1.Soundname = controller.setSoundFromFile();
+            //sequencer.sqBar1.Soundname = controller.setSoundFromFile();
             
             // }
             Debugger.Break();

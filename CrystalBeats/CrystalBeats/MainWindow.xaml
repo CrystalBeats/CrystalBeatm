@@ -252,8 +252,8 @@
                                 </Grid.RowDefinitions>
 
                                 <Border Grid.Row="1" Padding="10" BorderBrush="Wheat" BorderThickness="1">
-                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Button Width="75" Height="25" Margin="5 0" Command="{Binding SequenzKommand}" Content="1">
+                                    <StackPanel x:Name="border_Sequenz" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Button Width="75" Height="25" Margin="5 0" Command="{Binding SequenzKommand}" Content="1" Tag="0">
                                             <Button.InputBindings>
                                                 <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}">
                                                     <MouseBinding.CommandParameter>
@@ -289,7 +289,7 @@
                                                 </MouseBinding>
                                             </Button.InputBindings>
                                         </Button>
-                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="5">
                                             <Button.InputBindings>
                                                 <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
                                                     <MouseBinding.CommandParameter>
@@ -298,7 +298,7 @@
                                                 </MouseBinding>
                                             </Button.InputBindings>
                                         </Button>
-                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="6">
                                             <Button.InputBindings>
                                                 <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
                                                     <MouseBinding.CommandParameter>
@@ -347,8 +347,8 @@
                                         <Rectangle Width="50" Height="30" Fill="White" Margin="3 0"></Rectangle>
                                     </StackPanel>
                                 </Border>
-                                <Border Grid.Row="3" BorderBrush="Green" BorderThickness="1">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Border  Grid.Row="3" BorderBrush="Green" BorderThickness="1">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" x:Name="Border_Buttons">
                                         <Button x:Name="bt1"  Height="75" Width="50" Margin="3 0" Command="{Binding SelectSchlag}">
                                             <Button.CommandParameter>
                                                 <s:Int16>0</s:Int16>

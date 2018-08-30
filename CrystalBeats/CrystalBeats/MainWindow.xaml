@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:CrystalBeats"
         mc:Ignorable="d"
         WindowStyle="None" AllowsTransparency="True"
@@ -21,7 +22,7 @@
     </Window.InputBindings>
     
     -->
-    
+
     <Grid>
 
 
@@ -124,6 +125,16 @@
                                                                     <ColumnDefinition></ColumnDefinition>
                                                                     <ColumnDefinition></ColumnDefinition>
                                                                 </Grid.ColumnDefinitions>
+
+                                                                <Border BorderBrush="White" BorderThickness="5">
+                                                                    <StackPanel Orientation="Horizontal">
+                                                                    <Label Foreground="White" FontSize="24">Name Soundstück </Label>
+                                                                        <Button Width="50">&lt;</Button>
+                                                                        <Button Width="50">&gt;</Button>
+                                                                    </StackPanel>
+                                                                </Border>
+
+                                                                <Border Grid.Column="1" Background="White"></Border>
                                                             </Grid>
                                                         </Border>
                                                         <Border Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="10 0">
@@ -223,7 +234,7 @@
                                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Column="1">
                                     <Button Height="35" Width="100" >|&lt;</Button>
                                     <Button  x:Name="bt_Play" Command="{Binding PlayCommand}" Height="35" Width="200" Margin="10 2 10 5">Play / Pause</Button>
-                                    <Button Height="35" Width="200" Margin="10 5 10 5">Stop</Button>
+                                    <Button Command="{Binding StopCommand}" Height="35" Width="200" Margin="10 5 10 5">Stop</Button>
                                     <Button Height="35"  Width="200" Margin="10 5 10 2">Record</Button>
                                 </StackPanel>
                             </Grid>
@@ -242,14 +253,78 @@
 
                                 <Border Grid.Row="1" Padding="10" BorderBrush="Wheat" BorderThickness="1">
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Button Width="75" Height="25" Margin="5 0" Command="{Binding SelectSound}">1</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="2" Width="75" Height="25" Margin="5 0">2</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="3" Width="75" Height="25" Margin="5 0">3</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="4" Width="75" Height="25" Margin="5 0">4</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="5"  Width="75" Height="25" Margin="5 0">5</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="6" Width="75" Height="25" Margin="5 0">6</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="7" Width="75" Height="25" Margin="5 0">7</Button>
-                                        <Button Command="{Binding SelectSoundParameter}" CommandParameter="8" Width="75" Height="25" Margin="5 0">8</Button>
+                                        <Button Width="75" Height="25" Margin="5 0" Command="{Binding SequenzKommand}" Content="1">
+                                            <Button.InputBindings>
+                                                <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}">
+                                                    <MouseBinding.CommandParameter>
+                                                        <s:Int16>0</s:Int16>
+                                                    </MouseBinding.CommandParameter>
+                                                </MouseBinding>
+                                            </Button.InputBindings>
+                                        </Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="2">
+                                            <Button.InputBindings>
+                                                <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
+                                                    <MouseBinding.CommandParameter>
+                                                        <s:Int16>1</s:Int16>
+                                                    </MouseBinding.CommandParameter>
+                                                </MouseBinding>
+                                            </Button.InputBindings>
+                                        </Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="3">
+                                            <Button.InputBindings>
+                                                <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
+                                                    <MouseBinding.CommandParameter>
+                                                        <s:Int16>2</s:Int16>
+                                                    </MouseBinding.CommandParameter>
+                                                </MouseBinding>
+                                            </Button.InputBindings>
+                                        </Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="4">
+                                            <Button.InputBindings>
+                                                <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
+                                                    <MouseBinding.CommandParameter>
+                                                        <s:Int16>3</s:Int16>
+                                                    </MouseBinding.CommandParameter>
+                                                </MouseBinding>
+                                            </Button.InputBindings>
+                                        </Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">
+                                            <Button.InputBindings>
+                                                <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
+                                                    <MouseBinding.CommandParameter>
+                                                        <s:Int16>4</s:Int16>
+                                                    </MouseBinding.CommandParameter>
+                                                </MouseBinding>
+                                            </Button.InputBindings>
+                                        </Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0">
+                                            <Button.InputBindings>
+                                                <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
+                                                    <MouseBinding.CommandParameter>
+                                                        <s:Int16>5</s:Int16>
+                                                    </MouseBinding.CommandParameter>
+                                                </MouseBinding>
+                                            </Button.InputBindings>
+                                        </Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="7">
+                                            <Button.InputBindings>
+                                                <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
+                                                    <MouseBinding.CommandParameter>
+                                                        <s:Int16>6</s:Int16>
+                                                    </MouseBinding.CommandParameter>
+                                                </MouseBinding>
+                                            </Button.InputBindings>
+                                        </Button>
+                                        <Button Command="{Binding SequenzKommand}" Width="75" Height="25" Margin="5 0" Content="8">
+                                            <Button.InputBindings>
+                                                <MouseBinding Gesture="RightClick" Command="{Binding SelectSequenzKommand}" >
+                                                    <MouseBinding.CommandParameter>
+                                                        <s:Int16>7</s:Int16>
+                                                    </MouseBinding.CommandParameter>
+                                                </MouseBinding>
+                                            </Button.InputBindings>
+                                        </Button>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="2" BorderBrush="Yellow" BorderThickness="1" Padding="10 3" Visibility="Hidden">
@@ -274,26 +349,89 @@
                                 </Border>
                                 <Border Grid.Row="3" BorderBrush="Green" BorderThickness="1">
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button x:Name="bt1"  Height="75" Width="50" Margin="3 0" Command="{Binding SetSpezificSchlag}" CommandParameter="0">
+                                        <Button x:Name="bt1"  Height="75" Width="50" Margin="3 0" Command="{Binding SelectSchlag}">
+                                            <Button.CommandParameter>
+                                                <s:Int16>0</s:Int16>
+                                            </Button.CommandParameter>
                                             <StackPanel> 
                                                 <Label Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center">1</Label>
                                             </StackPanel>
                                         </Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="1" Height="75" Width="50" Margin="3 0">2</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="2" Height="75" Width="50" Margin="3 0">3</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="3" Height="75" Width="50" Margin="3 0">4</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="4" Height="75" Width="50" Margin="3 0">5</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="5" Height="75" Width="50" Margin="3 0">6</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="6" Height="75" Width="50" Margin="3 0">7</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="7" Height="75" Width="50" Margin="3 0">8</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="8" Height="75" Width="50" Margin="3 0">9</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="9" Height="75" Width="50" Margin="3 0">10</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="10" Height="75" Width="50" Margin="3 0">11</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="11" Height="75" Width="50" Margin="3 0">12</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="12" Height="75" Width="50" Margin="3 0">13</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="13" Height="75" Width="50" Margin="3 0">14</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="14" Height="75" Width="50" Margin="3 0">15</Button>
-                                        <Button Command="{Binding SelectSchlag}" CommandParameter="15" Height="75" Width="50" Margin="3 0">16</Button>
+                                        <Button Command="{Binding SelectSchlag}" Height="75" Width="50" Margin="3 0" Content="2">
+                                            <Button.CommandParameter>
+                                                <s:Int16>1</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="3" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>2</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="4" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>3</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="5" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>4</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="6" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>5</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="7" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>6</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="8" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>7</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="9" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>8</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="10" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>9</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="11" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>10</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="12" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>11</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="13" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>12</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="14" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>13</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="15" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>14</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
+                                        <Button Command="{Binding SelectSchlag}" Content="16" Height="75" Width="50" Margin="3 0">
+                                            <Button.CommandParameter>
+                                                <s:Int16>15</s:Int16>
+                                            </Button.CommandParameter>
+                                        </Button>
                                     </StackPanel>
                                 </Border>
                             </Grid>

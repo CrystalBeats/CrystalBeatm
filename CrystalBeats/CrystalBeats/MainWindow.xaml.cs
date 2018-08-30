@@ -31,6 +31,7 @@ namespace CrystalBeats
         public MainWindow()
         {
             InitializeComponent();
+
             cController = new Controller();
 
             KeyboardHook.CreateHook(KeyReader);
@@ -73,6 +74,7 @@ namespace CrystalBeats
             // If Joystick not found, throws an error
             if (joystickGuid == Guid.Empty)
             {
+
                 Console.WriteLine("No joystick/Gamepad found.");
                 Console.ReadKey();
                 Environment.Exit(1);
@@ -385,4 +387,10 @@ namespace CrystalBeats
 
     }
 }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> Frontend
 

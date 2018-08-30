@@ -18,9 +18,7 @@ namespace CrystalBeats
         //
 
         #region Properties für Backend - Stuff
-        Sequencer sequencer;
         Controller controller;
-        ProfileClass aktprofile;
 
         #endregion
 
@@ -127,7 +125,11 @@ namespace CrystalBeats
         //TODO: Schnittstellen zu Backend fertig stellen
         #region Commands und Konstruktor
         public ICommand PlayCommand { get; set; }
-        public ICommand SelectSound { get; set; }
+
+        public ICommand StopCommand { get; set; }
+        public ICommand SequenzKommand { get; set; }
+
+        public ICommand SelectSequenzKommand { get; set; }
 
         public ICommand NewProfile { get; set; }
         public ICommand SaveProfile { get; set; }
@@ -139,40 +141,45 @@ namespace CrystalBeats
 
         public ViewModel()
         {
-
-            sequencer = new Sequencer();
-            controller = new Controller();
             // aktprofile 
+
+            controller = new Controller();
 
             //todo implementierung
 
-            PlayCommand = new RelayCommand(() => sequencer.Play());
-            SelectSound = new RelayCommand(() => SetController());
-            NewProfile = new RelayCommand(() => neuesProfil());
-            SaveProfile = new RelayCommand(() => speichereProfil());
-            LoadProfile = new RelayCommand(() => ladeProfil());
+            PlayCommand = new RelayCommand(() => controller.sqSequencer.Play());
+            StopCommand = new RelayCommand(() => controller.sqSequencer.Stop());
 
-            SelectSoundParameter = new RelayParameterizedCommand(async (parameter) => await SetSpezificSequenz(parameter));
-            SelectSchlag = new RelayParameterizedCommand(async (parameter) => await SetSpezificSchlag(parameter));
+            SequenzKommand = new RelayCommand(() => ActivateSequenz());
+            SelectSequenzKommand = new RelayParameterizedCommand(parameter => SetSequenz(parameter));
+            //NewProfile = new RelayCommand(() => neu esProfil());
+            //SaveProfile = new RelayCommand(() => speichereProfil());
+            //LoadProfile = new RelayCommand(() => ladeProfil());
+
+      //      SelectSoundParameter = new RelayParameterizedCommand((parameter) => SetSpezificSequenz(parameter));
+            SelectSchlag = new RelayParameterizedCommand(parameter => ActivateTurnAccent(parameter));
         }
 
-        public void neuesProfil()
+        void ActivateTurnAccent(object parameter)
         {
-            // Todo neues Profil sollte nur in EngineClass angelegt werden
-            Sequence[] sequences = new Sequence[] {
-                sequencer.sqBar1,
-                sequencer.sqBar2,
-                sequencer.sqBar3,
-                sequencer.sqBar4,
-                sequencer.sqBar5,
-                sequencer.sqBar6,
-                sequencer.sqBar7,
-                sequencer.sqBar8};
-            aktprofile = new ProfileClass(sequences);
 
-           // controller.erstelleSequenz();
+            var i = (short)parameter;
+
+            this.Schlag = (int)i;
+
+            controller.turnAccent(this.Sequenz, this.Schlag);
         }
 
+        public void SetSequenz(object parameter)
+        {
+
+            var i = (short)parameter;
+
+            this.Sequenz = (int)i;
+
+            controller.setSoundFromFile(this.Sequenz);
+        }
+        
         public void ladeProfil()
         {
             //// Ort von Profil
@@ -215,8 +222,9 @@ namespace CrystalBeats
             //aktprofile.saveProfile();
         }
 
-        public void SetController()
+        void ActivateSequenz()
         {
+<<<<<<< HEAD
             //if (sequencer.sqBar1.Soundname == String.Empty)
            // { 
            //  sequencer.sqBar1.Soundname = controller.setSoundFromFile();
@@ -225,11 +233,15 @@ namespace CrystalBeats
             Debugger.Break();
 
             this.AktTitle = sequencer.ActiveSequence.Soundname;
+=======
+>>>>>>> Frontend
 
-            //SetTitleString();
-            controller.PlayOnce();
+            controller.sqSequencer.setActiveSequence(this.Sequenz);
 
         }
+
+    
+      
         
         public void SprecheAktiveSequenzAn()
         {
@@ -238,9 +250,9 @@ namespace CrystalBeats
             
         }
 
-        public async Task SetSpezificSequenz(object parameter)
+        public void SetSpezificSequenz(object parameter)
         {
-            Debugger.Break();
+      
 
             this.Sequenz = (int)parameter;
 
@@ -253,7 +265,9 @@ namespace CrystalBeats
             Debugger.Break();
             this.Schlag = (int)parameter;
 
-         //  await controller.turnAccent(this.Sequenz, this.Schlag));
+         //   await Task.Run(SelectSchlag);
+
+         //  controller.turnAccent(this.Sequenz, this.Schlag);
         }
 
         #endregion
@@ -269,7 +283,8 @@ namespace CrystalBeats
             get { return mAktBMP; }
             set
             {
-                mAktBMP = setBPM();
+                mAktBMP = value;
+              //  mAktBMP = setBPM();
                 onPropertyChanged("AktBPM");
             }
         }
@@ -344,21 +359,7 @@ namespace CrystalBeats
         }
 
 
-        string setBPM()
-        {
-
-            return sequencer.ActiveSequence.BPM.ToString();
-        }
-
-        string SetTotalLength()
-        {
-            return sequencer.ActiveSequence.SequenceLength.ToString();
-        }
-
-        void SetTitleString()
-        {
-            this.AktTitle = sequencer.ActiveSequence.Soundname;
-        }
+   
 
 
 

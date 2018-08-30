@@ -24,16 +24,9 @@ namespace CrystalBeats
         {
             strKey = "";
             sqSequencer = new Sequencer();
-            Sequence[] sequences = new Sequence[] {
-                sqSequencer.aSequences[0],
-                sqSequencer.aSequences[1],
-                sqSequencer.aSequences[2],
-                sqSequencer.aSequences[3],
-                sqSequencer.aSequences[4],
-                sqSequencer.aSequences[5],
-                sqSequencer.aSequences[6],
-                sqSequencer.aSequences[7]};
-            pProfile = new ProfileClass(sequences);
+
+            pProfile = new ProfileClass(sqSequencer.aSequences);
+
         }
 
         public void turnSequence(int iSequence)

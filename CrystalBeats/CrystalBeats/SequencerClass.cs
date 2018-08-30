@@ -32,7 +32,7 @@ namespace CrystalBeats
 
         public void Play()
         {
-            for(int i = 0; i <sqSequences.Length; i++)
+            for(int i = 0; i <sqSequences.Length -1; i++)
             {
                 sqSequences[i].Start();
             }
@@ -40,7 +40,7 @@ namespace CrystalBeats
 
         public void Stop()
         {
-            for (int i = 0; i < sqSequences.Length; i++)
+            for (int i = 0; i < sqSequences.Length -1; i++)
             {
                 sqSequences[i].Stop();
             }
@@ -58,7 +58,7 @@ namespace CrystalBeats
 
         private void syncBPM()
         {
-            for (int i = 0; i < sqSequences.Length; i++) sqSequences[i].BeatsPerSequence = iBPM;
+            for (int i = 0; i < sqSequences.Length -1; i++) sqSequences[i].BeatsPerSequence = iBPM;
         }
 
         public void PlaySound()
@@ -125,7 +125,7 @@ namespace CrystalBeats
            // this.strSoundslot = @"C:\Users\chokemedaddy\source\repos\CrystalBeatmachine\CrystalBeatm\CrystalBeats\CrystalBeats\bin\Debug\Sounds\Sprueche\vorwaerts.wav";
 
 
-            this.iPlayedBeats = new int[] { 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 };
+            this.iPlayedBeats = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             this.sePlayer = new ISoundEngine();
         }

@@ -26,25 +26,26 @@ namespace CrystalBeats
     public partial class MainWindow : Window
     {
         Joystick joystick;
-
+        Controller xControl;
         string strKey;
         string strField;
 
         Timer tHopScotch;
+
         public MainWindow()
         {
             InitializeComponent();
             KeyboardHook.CreateHook(KeyReader);
-            tHopScotch = new Timer();
             this.tHopScotch = new Timer();
             this.tHopScotch.Mode = TimerMode.Periodic;
             this.tHopScotch.Tick += new EventHandler(this.tHopScotch_Tick);
-            InitiallizeGamePad();
+            xControl = new Controller();
             // StartReadingThread();
            
             this.DataContext = new ViewModel();
             tHopScotch.Period = 5;
             tHopScotch.Resolution = 999999999;
+InitiallizeGamePad();
         }
 
         private void tHopScotch_Tick(object sender, EventArgs e)
@@ -53,7 +54,10 @@ namespace CrystalBeats
             foreach (var state in datas)
             {
                 strField = state.Offset.ToString();
-                if (state.Value == 128) ((ViewModel)(this.DataContext)).cController.sendCommand(strField);
+
+                //Action<string> action = new Action<string>(SendCommand);
+                if (state.Value == 128) xControl.sendCommand(strField);
+
             }
         }
 

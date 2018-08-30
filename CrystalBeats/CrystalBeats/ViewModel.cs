@@ -173,8 +173,8 @@ namespace CrystalBeats
 
         void SetDBValue()
         {
-            string i = ((MainWindow)Application.Current.MainWindow).tb_BPM.Text;
-            cController.sqSequencer.BPM = int.Parse(i);
+            //string i = ((MainWindow)Application.Current.MainWindow).tb_BPM.Text;
+            //cController.sqSequencer.BPM = int.Parse(i);
 
         }
 

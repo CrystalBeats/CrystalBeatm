@@ -28,36 +28,45 @@ namespace CrystalBeats
         Joystick joystick;
 
         string strKey;
+        string strField;
+
+        Timer tHopScotch;
         public MainWindow()
         {
             InitializeComponent();
             KeyboardHook.CreateHook(KeyReader);
-            //InitiallizeGamePad();
-            //StartReadingThread();
-
+            tHopScotch = new Timer();
+            this.tHopScotch = new Timer();
+            this.tHopScotch.Mode = TimerMode.Periodic;
+            this.tHopScotch.Tick += new EventHandler(this.tHopScotch_Tick);
+            InitiallizeGamePad();
+            // StartReadingThread();
+           
             this.DataContext = new ViewModel();
+            tHopScotch.Period = 5;
+            tHopScotch.Resolution = 999999999;
+        }
 
-
+        private void tHopScotch_Tick(object sender, EventArgs e)
+        {
+            var datas = joystick.GetBufferedData();
+            foreach (var state in datas)
+            {
+                strField = state.Offset.ToString();
+                if (state.Value == 128) ((ViewModel)(this.DataContext)).cController.sendCommand(strField);
+            }
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-
-            bool isPressed = false;
-            if (!isPressed)
+            bool bPressed = false;
+            if (!bPressed)
             {
                 ((ViewModel)(this.DataContext)).cController.sendCommand(strKey);
-                isPressed = true;
+                bPressed = true;
             }
-
         }
 
-        private void StartReadingThread()
-        {
-            ThreadStart thStart = new ThreadStart(HopScotchReader);
-            Thread th = new Thread(thStart);
-            th.Start();
-        }
 
         private void InitiallizeGamePad()
         {
@@ -81,38 +90,40 @@ namespace CrystalBeats
             if (joystickGuid == Guid.Empty)
             {
 
-                Console.WriteLine("No joystick/Gamepad found.");
-                Console.ReadKey();
-                Environment.Exit(1);
+                MessageBox.Show("No joystick/Gamepad found.");
 
             }
+            else
+            {
+                // Instantiate the joystick
+                joystick = new Joystick(directInput, joystickGuid);
 
-            // Instantiate the joystick
-            joystick = new Joystick(directInput, joystickGuid);
+                Console.WriteLine("Found Joystick/Gamepad with GUID: {0}", joystickGuid);
 
-            Console.WriteLine("Found Joystick/Gamepad with GUID: {0}", joystickGuid);
+                // Query all suported ForceFeedback effects
+                var allEffects = joystick.GetEffects();
+                foreach (var effectInfo in allEffects)
+                    Console.WriteLine("Effect available {0}", effectInfo.Name);
 
-            // Query all suported ForceFeedback effects
-            var allEffects = joystick.GetEffects();
-            foreach (var effectInfo in allEffects)
-                Console.WriteLine("Effect available {0}", effectInfo.Name);
+                // Set BufferSize in order to use buffered data.
+                joystick.Properties.BufferSize = 128;
 
-            // Set BufferSize in order to use buffered data.
-            joystick.Properties.BufferSize = 128;
+                // Acquire the joystick
+                joystick.Acquire();
 
-            // Acquire the joystick
-            joystick.Acquire();
-
+                tHopScotch.Start();
+            }
 
         }
-        private void HopScotchReader()
+        public void HopScotchReader()
         {
             while (true)
             {
                 var datas = joystick.GetBufferedData();
                 foreach (var state in datas)
                 {
-                    if (state.Value == 128) ((ViewModel)(this.DataContext)).cController.sendCommand(state.Offset.ToString());
+                    strField = state.Offset.ToString();
+                    if (state.Value == 128) ((ViewModel)(this.DataContext)).cController.sendCommand(strField);
                 }
 
             }

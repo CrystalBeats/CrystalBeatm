@@ -25,15 +25,15 @@ namespace CrystalBeats
             strKey = "";
             sqSequencer = new Sequencer();
             Sequence[] sequences = new Sequence[] {
-                sqSequencer.sqSequences[0],
-                sqSequencer.sqSequences[1],
-                sqSequencer.sqSequences[2],
-                sqSequencer.sqSequences[3],
-                sqSequencer.sqSequences[4],
-                sqSequencer.sqSequences[5],
-                sqSequencer.sqSequences[6],
-                sqSequencer.sqSequences[7]};
-            pProfile = new ProfileClass(sequences);
+                sqSequencer.aSequences[0],
+                sqSequencer.aSequences[1],
+                sqSequencer.aSequences[2],
+                sqSequencer.aSequences[3],
+                sqSequencer.aSequences[4],
+                sqSequencer.aSequences[5],
+                sqSequencer.aSequences[6],
+                sqSequencer.aSequences[7]};
+            pProfile = new ProfileClass(sqSequencer.aSequences);
         }
 
         public void turnSequence(int iSequence)

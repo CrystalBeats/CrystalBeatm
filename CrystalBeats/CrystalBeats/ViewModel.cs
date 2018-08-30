@@ -418,7 +418,7 @@ namespace CrystalBeats
 
                 if ((short)button.CommandParameter == compare)
                 {
-                    button.Background = controller.turnColor(this.Sequenz, this.Schlag);
+                    button.Background = cController.turnColor(this.Sequenz, this.Schlag);
                     break;
                 }
 

@@ -22,15 +22,7 @@ namespace CrystalBeats
         {
             cController = new Controller();
             sSequencer = new Sequencer();
-            Sequence[] sequences = new Sequence[] {
-                sSequencer.sqBar1,
-                sSequencer.sqBar2,
-                sSequencer.sqBar3,
-                sSequencer.sqBar4,
-                sSequencer.sqBar5,
-                sSequencer.sqBar6,
-                sSequencer.sqBar7,
-                sSequencer.sqBar8};
+
 
         }
     }

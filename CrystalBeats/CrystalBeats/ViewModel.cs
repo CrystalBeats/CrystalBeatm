@@ -125,6 +125,8 @@ namespace CrystalBeats
         //TODO: Schnittstellen zu Backend fertig stellen
         #region Commands und Konstruktor
         public ICommand PlayCommand { get; set; }
+
+        public ICommand StopCommand { get; set; }
         public ICommand SequenzKommand { get; set; }
 
         public ICommand SelectSequenzKommand { get; set; }
@@ -145,22 +147,39 @@ namespace CrystalBeats
 
             //todo implementierung
 
-            //PlayCommand = new RelayCommand(() => sequencer.Play());
+            PlayCommand = new RelayCommand(() => controller.sqSequencer.Play());
+            StopCommand = new RelayCommand(() => controller.sqSequencer.Stop());
+
             SequenzKommand = new RelayCommand(() => ActivateSequenz());
-            SelectSequenzKommand = new RelayCommand(() => SetSequenz());
+            SelectSequenzKommand = new RelayParameterizedCommand(parameter => SetSequenz(parameter));
             //NewProfile = new RelayCommand(() => neu esProfil());
             //SaveProfile = new RelayCommand(() => speichereProfil());
             //LoadProfile = new RelayCommand(() => ladeProfil());
 
-            SelectSoundParameter = new RelayParameterizedCommand(async (parameter) => await SetSpezificSequenz(parameter));
-            SelectSchlag = new RelayParameterizedCommand(async (parameter) => await SetSpezificSchlag(parameter));
+      //      SelectSoundParameter = new RelayParameterizedCommand((parameter) => SetSpezificSequenz(parameter));
+            SelectSchlag = new RelayParameterizedCommand(parameter => ActivateTurnAccent(parameter));
         }
 
-        public void SetSequenz()
+        void ActivateTurnAccent(object parameter)
         {
-            controller.setSoundFromFile(Sequenz);
+
+            var i = (short)parameter;
+
+            this.Schlag = (int)i;
+
+            controller.turnAccent(this.Sequenz, this.Schlag);
         }
 
+        public void SetSequenz(object parameter)
+        {
+
+            var i = (short)parameter;
+
+            this.Sequenz = (int)i;
+
+            controller.setSoundFromFile(this.Sequenz);
+        }
+        
         public void ladeProfil()
         {
             //// Ort von Profil
@@ -210,6 +229,7 @@ namespace CrystalBeats
 
         }
 
+    
       
         
         public void SprecheAktiveSequenzAn()
@@ -219,9 +239,9 @@ namespace CrystalBeats
             
         }
 
-        public async Task SetSpezificSequenz(object parameter)
+        public void SetSpezificSequenz(object parameter)
         {
-            Debugger.Break();
+      
 
             this.Sequenz = (int)parameter;
 
@@ -234,7 +254,9 @@ namespace CrystalBeats
             Debugger.Break();
             this.Schlag = (int)parameter;
 
-         //  await controller.turnAccent(this.Sequenz, this.Schlag));
+         //   await Task.Run(SelectSchlag);
+
+         //  controller.turnAccent(this.Sequenz, this.Schlag);
         }
 
         #endregion

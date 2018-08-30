@@ -104,7 +104,9 @@ namespace CrystalBeats
             this.iBeatsPerSequence = 16;
             this.bRested = false;
             this.strBarName = strBarname;
-            
+
+            this.SequenceLength = 16;
+
             this.strSoundslot = @"C:\Users\chokemedaddy\Downloads\Berufsschule\adamnsampler-master\KORG WPF\Resources\acerBrandNeu14.wav";
             
 

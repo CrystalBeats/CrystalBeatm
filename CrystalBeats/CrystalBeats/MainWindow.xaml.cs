@@ -26,14 +26,11 @@ namespace CrystalBeats
     public partial class MainWindow : Window
     {
         Joystick joystick;
-        Controller cController;
+
         string strKey;
         public MainWindow()
         {
             InitializeComponent();
-
-            cController = new Controller();
-
             KeyboardHook.CreateHook(KeyReader);
             //InitiallizeGamePad();
             //StartReadingThread();
@@ -43,7 +40,12 @@ namespace CrystalBeats
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            cController.sendCommand(strKey);
+            bool isPressed = false;
+            if (!isPressed)
+            {
+                ((ViewModel)(this.DataContext)).cController.sendCommand(strKey);
+                isPressed = true;
+            }
         }
 
         private void StartReadingThread()
@@ -106,7 +108,7 @@ namespace CrystalBeats
                 var datas = joystick.GetBufferedData();
                 foreach (var state in datas)
                 {
-                    if (state.Value == 128) cController.sendCommand(state.Offset.ToString());
+                    if (state.Value == 128) ((ViewModel)(this.DataContext)).cController.sendCommand(state.Offset.ToString());
                 }
 
             }

@@ -85,9 +85,9 @@ namespace CrystalBeats
             get
             {
                 int x = 0;
-                for (int i = 0; i<sqSequencer.aSequences.Length; i++)
+                for (int i = 0; i<sqSequencer.aSequences.Length -1; i++)
                 {
-                    x = (sqSequencer.aSequences[i].Name == sqSequencer.ActiveSequence.Name) ? i : 1337;
+                    x = (sqSequencer.aSequences[i].Name == sqSequencer.ActiveSequence.Name) ? i : x;
                 }
 
                 return x;
@@ -162,6 +162,7 @@ namespace CrystalBeats
                     break;
             }
         }
+
 
     
     }

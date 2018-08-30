@@ -11,14 +11,14 @@ using System.Windows.Input;
 
 namespace CrystalBeats
 {
-    class ViewModel: INotifyPropertyChanged
+    public class ViewModel: INotifyPropertyChanged
     {
 
         //Frontend: 
         //
 
         #region Properties für Backend - Stuff
-        Controller controller;
+        public Controller cController;
 
         #endregion
 
@@ -143,12 +143,12 @@ namespace CrystalBeats
         {
             // aktprofile 
 
-            controller = new Controller();
+            cController = new Controller();
 
             //todo implementierung
 
-            PlayCommand = new RelayCommand(() => controller.sqSequencer.Play());
-            StopCommand = new RelayCommand(() => controller.sqSequencer.Stop());
+            PlayCommand = new RelayCommand(() => cController.sqSequencer.Play());
+            StopCommand = new RelayCommand(() => cController.sqSequencer.Stop());
 
             SequenzKommand = new RelayCommand(() => ActivateSequenz());
             SelectSequenzKommand = new RelayParameterizedCommand(parameter => SetSequenz(parameter));
@@ -167,7 +167,7 @@ namespace CrystalBeats
 
             this.Schlag = (int)i;
 
-            controller.turnAccent(this.Sequenz, this.Schlag);
+            cController.turnAccent(this.Sequenz, this.Schlag);
         }
 
         public void SetSequenz(object parameter)
@@ -177,7 +177,7 @@ namespace CrystalBeats
 
             this.Sequenz = (int)i;
 
-            controller.setSoundFromFile(this.Sequenz);
+            cController.setSoundFromFile(this.Sequenz);
         }
         
         public void ladeProfil()
@@ -225,7 +225,7 @@ namespace CrystalBeats
         void ActivateSequenz()
         {
 
-            controller.sqSequencer.setActiveSequence(this.Sequenz);
+            cController.sqSequencer.setActiveSequence(this.Sequenz);
 
         }
 

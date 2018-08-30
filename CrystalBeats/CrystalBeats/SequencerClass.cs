@@ -194,10 +194,14 @@ namespace CrystalBeats
                 iCounter = 1;
             }
 
-            if (iPlayedBeats[iCounter - 1] != 0 && !bRested)
+            if (iPlayedBeats[iCounter - 1] != 0)
             {
-                sePlayer.StopAllSounds();
-                sePlayer.Play2D(strSoundslot);
+                if (!Rested)
+                {
+                   // sePlayer.StopAllSounds();
+                    sePlayer.Play2D(strSoundslot);
+                }
+                
             }
             iCounter++;
         }

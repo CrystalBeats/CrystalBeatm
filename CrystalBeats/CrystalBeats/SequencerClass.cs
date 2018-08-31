@@ -311,6 +311,10 @@ namespace CrystalBeats
         {
             get { return strBarName; }
         }
+
+        public int ActualBeat
+        {
+            get { return iCounter; }
     }
 
     public class Accent

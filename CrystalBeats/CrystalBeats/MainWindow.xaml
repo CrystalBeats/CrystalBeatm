@@ -263,7 +263,7 @@
                                     <Button Height="35" Width="100" Visibility="Collapsed">|&lt;</Button>
                                     <Button Foreground="Black" FontSize="20" Background="Transparent" BorderBrush="Black" BorderThickness="1"  x:Name="bt_Play" Command="{Binding PlayCommand}" Height="35" Width="200" Margin="10 2 10 5">Play</Button>
                                     <Button Foreground="Black" FontSize="20" Background="Transparent" BorderBrush="Black" BorderThickness="1"   Command="{Binding StopCommand}" Height="35" Width="200" Margin="10 5 10 5">Stop</Button>
-                                    <ToggleButton Foreground="Black" FontSize="20" Background="Transparent" BorderBrush="Black" BorderThickness="1"   Height="35"  Width="200" Margin="10 5 10 2">LiveMode</ToggleButton>
+                                    <ToggleButton Foreground="Black" FontSize="20" Background="Transparent" BorderBrush="Black" BorderThickness="1"   Height="35"  Width="200" Margin="10 5 10 2" Click="ToggleButton_Click">LiveMode</ToggleButton>
 
                                 </StackPanel>
                             </Grid>

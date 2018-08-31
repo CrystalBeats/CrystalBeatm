@@ -406,12 +406,10 @@ namespace CrystalBeats
             }
         }
 
-        private void LiveModeButton_Click(object sender, RoutedEventArgs e)
+        private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
             xControl = ((ViewModel)(this.DataContext)).cController;
         }
-
-   
     }
 }
 

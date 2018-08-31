@@ -198,7 +198,7 @@ namespace CrystalBeats
                     sePlayer.StopAllSounds();
                     sePlayer.Play2D(strSoundslot);
                 }
-                
+
             }
             iCounter++;
         }
@@ -315,8 +315,8 @@ namespace CrystalBeats
         public int ActualBeat
         {
             get { return iCounter; }
+        }
     }
-
     public class Accent
     {
         private bool bPlayed;

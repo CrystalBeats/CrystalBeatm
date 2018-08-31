@@ -46,6 +46,8 @@ namespace CrystalBeats
             tHopScotch.Period = 5;
             tHopScotch.Resolution = 999999999;
             InitiallizeGamePad();
+
+            
         }
 
         private void tHopScotch_Tick(object sender, EventArgs e)

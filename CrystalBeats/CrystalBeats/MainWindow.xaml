@@ -155,7 +155,7 @@
                                                                                         Set BPM
                                                                                     </Button>
                                                                                 </StackPanel>
-                                                                                <StackPanel Margin="0 5 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                                                <StackPanel Visibility="Collapsed" Margin="0 5 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
                                                                                     <TextBox Foreground="Black" BorderBrush="Black" BorderThickness="1" Background="Transparent"  Name="tb_Db" Width="100" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">190</TextBox>
                                                                                     <Button Foreground="Black" FontSize="30" BorderBrush="Black" BorderThickness="1" Background="Transparent" Padding="10 0 10 0" Margin="10 0" Command="{Binding SetDB}" Width="250">
                                                                                         Set dB
@@ -176,12 +176,12 @@
                                                                     <ColumnDefinition></ColumnDefinition>
                                                                 </Grid.ColumnDefinitions>
 
-                                                                <Border>
+                                                                <Border Grid.ColumnSpan="3">
                                                                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"> CRYSTAL BEATMACHINE</TextBlock>
                                                                 </Border>
                                                                 
-                                                                <Border Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right">
-                                                                    <StackPanel Orientation="Horizontal" Name="Panel_Schläge">
+                                                                <Border Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" Visibility="Collapsed">
+                                                                    <StackPanel Orientation="Horizontal" Name="Panel_Schläge" Visibility="Collapsed">
                                                                        <!--  <TextBlock x:Name="block_schlag" FontSize="23" VerticalAlignment="Center" HorizontalAlignment="Stretch">
                                                                             <Run Foreground="Wheat">1</Run><Run>2</Run><Run>3</Run><Run>4</Run><Run Foreground="Wheat">5</Run><Run>6</Run><Run>7</Run><Run>8</Run><Run Foreground="Wheat">9</Run><Run>10</Run><Run>11</Run><Run>12</Run><Run Foreground="Wheat">13</Run><Run>14</Run><Run>15</Run><Run>16</Run>
                                                                         </TextBlock> -->

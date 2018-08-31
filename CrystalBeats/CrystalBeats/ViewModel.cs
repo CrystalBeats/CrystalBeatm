@@ -220,6 +220,8 @@ namespace CrystalBeats
             string i = ((MainWindow)Application.Current.MainWindow).tb_BPM.Text;
             cController.sqSequencer.BPM = int.Parse(i);
 
+
+            this.AktBPM = "Aktuelle BPM: " + cController.sqSequencer.BPM.ToString();
         }
 
         void ActivateTurnAccent(object parameter)
@@ -437,10 +439,6 @@ namespace CrystalBeats
         }
 
 
-   
-
-
-
         //Ansteuerung SettingsBereich
 
         //Ansteuerung Steuerbereich
@@ -525,10 +523,12 @@ namespace CrystalBeats
             }
         }
 
-        void setSchlagInDisplay()
-        {
-            
-        }
+
+
+        //void setSchlagInDisplay()
+        //{
+        //    cController.sqSequencer.ActiveSequence.ActualBeat
+        //}
 
         #endregion
     }

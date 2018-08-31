@@ -20,7 +20,7 @@ namespace CrystalBeats
         public List<Sequence> colSequences;
         public Sequencer()
         {
-            iBPM = 190;
+            iBPM = 210;
             colSequences = new List<Sequence>();
             sqActiveSequence = new Sequence("");
 
@@ -58,9 +58,11 @@ namespace CrystalBeats
 
         private void syncBPM()
         {
-            for (int i = 0; i < sqSequences.Length -1; i++) sqSequences[i].BPM = iBPM;
+            for (int i = 0; i < sqSequences.Length - 1; i++)
+            {
+                sqSequences[i].BPM = iBPM;
+            }
         }
-
         public void PlaySound()
         {
             sqActiveSequence.PlaySound();
@@ -128,12 +130,8 @@ namespace CrystalBeats
             this.iPlayedBeats = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             this.sePlayer = new ISoundEngine();
+
         }
-
-       // public Sequence(Profile SequencerProfile)
-        //{
-
-        //}
 
         private int getBPMasMS()
         {
@@ -197,7 +195,7 @@ namespace CrystalBeats
             {
                 if (!Rested)
                 {
-                   // sePlayer.StopAllSounds();
+                    sePlayer.StopAllSounds();
                     sePlayer.Play2D(strSoundslot);
                 }
                 
@@ -252,6 +250,7 @@ namespace CrystalBeats
                 {
                     iDB = value;
                     sePlayer.SoundVolume = value;
+                    sePlayer.Update();
                 }
             }
         }

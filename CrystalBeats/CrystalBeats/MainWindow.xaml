@@ -7,7 +7,9 @@
         xmlns:local="clr-namespace:CrystalBeats"
         mc:Ignorable="d"
         WindowStyle="None" AllowsTransparency="True"
-        Title="MainWindow" Height="600" Width="1000" KeyDown="Window_KeyDown">
+        WindowStartupLocation="CenterScreen"
+        
+        Title="MainWindow" Height="750" Width="1150" KeyDown="Window_KeyDown">
 
     <!--
     <Window.InputBindings>

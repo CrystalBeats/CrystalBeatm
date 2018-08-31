@@ -309,6 +309,24 @@ namespace CrystalBeats
             SetSequenz(parameter, false);
 
             cController.sqSequencer.setActiveSequence(this.Sequenz);
+    
+
+            SetzeButtonsSequenz(this.Sequenz);
+
+            this.AktTitle = Path.GetFileName(cController.sqSequencer.ActiveSequence.Soundname);
+            this.AktBPM = "Aktuelle BPM: " + cController.sqSequencer.BPM.ToString();
+
+        }
+
+
+       public void ActivateSequenz(object parameter, bool ActiveSequenz = true)
+        {
+
+            SetSequenz(parameter, false);
+
+            if (ActiveSequenz) { 
+            cController.sqSequencer.setActiveSequence(this.Sequenz);
+            }
 
             SetzeButtonsSequenz(this.Sequenz);
 
@@ -318,7 +336,7 @@ namespace CrystalBeats
         }
 
     
-      
+              
   
 
 

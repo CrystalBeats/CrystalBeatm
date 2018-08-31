@@ -157,6 +157,8 @@ namespace CrystalBeats
 
         public ICommand CloseCommand { get; set; }
 
+    //    public ICommand SetController { get; set; }
+
         public ViewModel()
         {
             // aktprofile 
@@ -183,6 +185,8 @@ namespace CrystalBeats
             SetBPM = new RelayCommand(() => SetBPMValue());
 
             SetDB = new RelayCommand(() => SetDBValue());
+
+//            SetController = new RelayCommand(() => setControllerSource());
 
             int i = 0;
 

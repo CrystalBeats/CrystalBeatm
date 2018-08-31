@@ -58,7 +58,7 @@ namespace CrystalBeats
 
         private void syncBPM()
         {
-            for (int i = 0; i < sqSequences.Length -1; i++) sqSequences[i].BeatsPerSequence = iBPM;
+            for (int i = 0; i < sqSequences.Length -1; i++) sqSequences[i].BPM = iBPM;
         }
 
         public void PlaySound()

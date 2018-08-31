@@ -19,7 +19,7 @@ namespace CrystalBeats
     {
 
         public Sequencer sqSequencer;
-        private ProfileClass pProfile;
+        public ProfileClass pProfile;
         public Controller()
         {
 
@@ -32,6 +32,19 @@ namespace CrystalBeats
         public void turnSequence(int iSequence)
         {
             sqSequencer.aSequences[iSequence].Rested = !sqSequencer.aSequences[iSequence].Rested;
+        }
+
+        public void loadProfile(string strProfile)
+        {
+            pProfile.loadProfile(strProfile);
+
+            sqSequencer.aSequences = pProfile.pSequences;
+        }
+
+        public void saveProfile(string strSavePath)
+        {
+            pProfile.pSequences = sqSequencer.aSequences;
+            pProfile.saveProfile(strSavePath);
         }
 
         public void enableVisuals(Sequence seq, List<Sequence> seqCol, Sequencer Sequencer)
@@ -118,6 +131,7 @@ namespace CrystalBeats
                 case ("1"): //HopScotch Feld wie in Array
                     sqSequencer.aSequences[0].PlaySound();
                     sqSequencer.setActiveSequence(0);
+                    ((ViewModel)((MainWindow)Application.Current.MainWindow).DataContext).
                     break;
                 case "2":
                     sqSequencer.aSequences[1].PlaySound();

@@ -70,6 +70,8 @@ namespace CrystalBeats
             {
                 ((ViewModel)(this.DataContext)).cController.sendCommand(strKey);
                 bPressed = true;
+
+             
             }
         }
 

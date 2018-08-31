@@ -227,10 +227,10 @@
 
 
 
-                                                        <Button BorderBrush="Black" BorderThickness="1" Background="Transparent" Foreground="Black" FontSize="20" Grid.Column="3" Width="250" Command="{Binding NewProfile}" Padding="10 0 10 0"> Profil erstellen </Button>
+                                                        <Button BorderBrush="Black" BorderThickness="1" Background="Transparent" Foreground="Black" FontSize="20" Grid.Column="3" Grid.ColumnSpan="2" Width="250" Command="{Binding NewProfile}" Padding="10 0 10 0" Visibility="Collapsed"> Profil erstellen </Button>
 
-                                                        <Button BorderBrush="Black" BorderThickness="1" Background="Transparent" Foreground="Black" FontSize="20" Grid.Column="4" Width="250" Padding="10 0 10 0" Command="{Binding SaveProfile}" Margin="36,-2,36,2"> Profil speichern </Button>
-                                                        <Button BorderBrush="Black" BorderThickness="1" Background="Transparent" Grid.Column="5" Foreground="Black" FontSize="20" Width="250" Padding="10 0 10 0">Profil Laden</Button>
+                                                        <Button BorderBrush="Black" BorderThickness="1" Background="Transparent" Foreground="Black" FontSize="20" Grid.Column="3" Grid.ColumnSpan="2" Width="250" Padding="10 0 10 0" Command="{Binding SaveProfile}" Margin="36,-2,36,2"> Profil speichern </Button>
+                                                        <Button BorderBrush="Black" BorderThickness="1" Background="Transparent" Grid.Column="4" Grid.ColumnSpan="2" Foreground="Black" FontSize="20" Width="250" Padding="10 0 10 0">Profil Laden</Button>
                                                     </Grid>
                                                 </Border>
                                             </Grid>

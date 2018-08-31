@@ -54,6 +54,7 @@ namespace CrystalBeats
                 for(int a = 0; a < loadingbeats.Length; a++)
                 {
                     accentedBeats[i,a] = loadingbeats[a];
+                    bars[i].PlayedBeats[a] = loadingbeats[a];
                 }
             }
         }
@@ -66,6 +67,7 @@ namespace CrystalBeats
         public void setAccentedBeat(int bar, int accentedbeat, int val)
         {
             accentedBeats[bar, accentedbeat] = val;
+
         }
 
         // Getter Setter Bar
@@ -109,7 +111,7 @@ namespace CrystalBeats
                 config["Korg" + korgname]["db"].FloatValue = bars[i].DB;
                 config["Korg" + korgname]["rest"].BoolValue = bars[i].Rested;
                 int[] savingbeats = getAccentedBeats(i);
-                config["Korg" + i]["accents"].IntValueArray = savingbeats;
+                config["Korg" + korgname]["accents"].IntValueArray = savingbeats;
             }
 
             config.SaveToFile(filetosave);

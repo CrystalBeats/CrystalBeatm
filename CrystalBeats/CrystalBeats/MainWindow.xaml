@@ -259,17 +259,12 @@
                                 </Grid.ColumnDefinitions>
 
                                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Column="1">
-<<<<<<< HEAD
-                                    <Button Height="35" Width="100" >|&lt;</Button>
-                                    <Button  x:Name="bt_Play" Command="{Binding PlayCommand}" Height="35" Width="200" Margin="10 2 10 5">Play / Pause</Button>
-                                    <Button Command="{Binding StopCommand}" Height="35" Width="200" Margin="10 5 10 5">Stop</Button>
-                                    <Button x:Name="LiveModeButton" Height="35"  Width="200" Margin="10 5 10 2" Click="LiveModeButton_Click">Record</Button>
-=======
+
                                     <Button Height="35" Width="100" Visibility="Collapsed">|&lt;</Button>
                                     <Button Foreground="Black" FontSize="20" Background="Transparent" BorderBrush="Black" BorderThickness="1"  x:Name="bt_Play" Command="{Binding PlayCommand}" Height="35" Width="200" Margin="10 2 10 5">Play</Button>
                                     <Button Foreground="Black" FontSize="20" Background="Transparent" BorderBrush="Black" BorderThickness="1"   Command="{Binding StopCommand}" Height="35" Width="200" Margin="10 5 10 5">Stop</Button>
                                     <ToggleButton Foreground="Black" FontSize="20" Background="Transparent" BorderBrush="Black" BorderThickness="1"   Height="35"  Width="200" Margin="10 5 10 2">LiveMode</ToggleButton>
->>>>>>> Frontend
+
                                 </StackPanel>
                             </Grid>
                         </Border>

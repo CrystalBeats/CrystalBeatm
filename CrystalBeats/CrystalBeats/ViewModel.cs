@@ -182,13 +182,20 @@ namespace CrystalBeats
             SelectSchlag = new RelayParameterizedCommand(parameter => ActivateTurnAccent(parameter));
             SetBPM = new RelayCommand(() => SetBPMValue());
 
-            SetBPM = new RelayCommand(() => SetBPMValue());
+            SetDB = new RelayCommand(() => SetDBValue());
 
             int i = 0;
 
             ActivateSequenz((short)i);
 
             //((Label)((MainWindow)Application.Current.MainWindow).Panel_Schläge.Children[0]).Foreground = Brushes.Purple;
+        }
+
+        void SetDBValue()
+        {
+            string i = ((MainWindow)Application.Current.MainWindow).tb_Db.Text;
+            cController.sqSequencer.aSequences[this.Sequenz].DB = int.Parse(i);
+
         }
 
         void playSound()
@@ -206,8 +213,8 @@ namespace CrystalBeats
 
         void SetBPMValue()
         {
-            //string i = ((MainWindow)Application.Current.MainWindow).tb_BPM.Text;
-            //cController.sqSequencer.BPM = int.Parse(i);
+            string i = ((MainWindow)Application.Current.MainWindow).tb_BPM.Text;
+            cController.sqSequencer.BPM = int.Parse(i);
 
         }
 

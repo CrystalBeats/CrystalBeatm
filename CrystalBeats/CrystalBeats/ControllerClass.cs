@@ -44,7 +44,7 @@ namespace CrystalBeats
         public void saveProfile()
         {
             pProfile.pSequences = sqSequencer.aSequences;
-            pProfile.saveProfile(SaveFileName());
+            pProfile.saveProfile(SaveFileName(),"test");
         }
 
         public void enableVisuals(Sequence seq, List<Sequence> seqCol, Sequencer Sequencer)

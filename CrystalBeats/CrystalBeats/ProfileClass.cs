@@ -43,7 +43,7 @@ namespace CrystalBeats
             saveProfile(saveto);*/
         }
         // Getter setter accentedbeats
-        public int[,] getAccentedBeats(){return accentedBeats;}
+        public int[] getAccentedBeats(int bar) { return bars[bar].PlayedBeats}
         public void setAccentedBeats(SharpConfig.Section[] sections)
         {
             // Loop bars
@@ -57,8 +57,11 @@ namespace CrystalBeats
                 }
             }
         }
-        public int getAccentedBeat(int bar, int accentedbeat){
-            return accentedBeats[bar, accentedbeat];
+        public int getAccentedBeat(int bar, int accentedbeat)
+        {
+            int[] beats = bars[bar].PlayedBeats;
+            return beats[accentedbeat];
+            //return accentedBeats[bar, accentedbeat];
         }
         public void setAccentedBeat(int bar, int accentedbeat, int val)
         {
@@ -105,11 +108,7 @@ namespace CrystalBeats
                 config["Korg" + korgname]["soundslot"].StringValue = bars[i].Soundname;
                 config["Korg" + korgname]["db"].FloatValue = bars[i].DB;
                 config["Korg" + korgname]["rest"].BoolValue = bars[i].Rested;
-                int[] savingbeats = new int[16];
-                for(int a = 0; a < 16; a++)
-                {
-                    savingbeats[a] = accentedBeats[i,a];
-                }
+                int[] savingbeats = getAccentedBeats(i);
                 config["Korg" + i]["accents"].IntValueArray = savingbeats;
             }
 

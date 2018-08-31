@@ -102,7 +102,7 @@ namespace CrystalBeats
             {
                 int korgname = i + 1;
                 config["Korg" + korgname]["soundslot"].StringValue = bars[i].Soundname;
-                config["Korg" + korgname]["db"].IntValue = bars[i].DB;
+                config["Korg" + korgname]["db"].FloatValue = bars[i].DB;
                 config["Korg" + korgname]["rest"].BoolValue = bars[i].Rested;
                 int[] savingbeats = new int[16];
                 for(int a = 0; a < 16; a++)

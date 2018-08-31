@@ -155,7 +155,7 @@
                                                                                         Set BPM
                                                                                     </Button>
                                                                                 </StackPanel>
-                                                                                <StackPanel Visibility="Collapsed" Margin="0 5 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                                                <StackPanel Margin="0 5 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
                                                                                     <TextBox Foreground="Black" BorderBrush="Black" BorderThickness="1" Background="Transparent"  Name="tb_Db" Width="100" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">190</TextBox>
                                                                                     <Button Foreground="Black" FontSize="30" BorderBrush="Black" BorderThickness="1" Background="Transparent" Padding="10 0 10 0" Margin="10 0" Command="{Binding SetDB}" Width="250">
                                                                                         Set dB

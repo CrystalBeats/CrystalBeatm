@@ -198,7 +198,12 @@ namespace CrystalBeats
         void SetDBValue()
         {
             string i = ((MainWindow)Application.Current.MainWindow).tb_Db.Text;
-            cController.sqSequencer.aSequences[this.Sequenz].DB = int.Parse(i);
+
+            int j = int.Parse(i);
+
+            float db = j / 100f;
+
+            cController.sqSequencer.aSequences[this.Sequenz].DB = db;
 
         }
 
@@ -266,7 +271,7 @@ namespace CrystalBeats
             //aktprofile.loadProfile(openFileDialog.FileName);
             //}
 
-         //   controller.ladeProfil();
+//            cController.ladeProfil();
 
         }
 
@@ -314,41 +319,8 @@ namespace CrystalBeats
 
     
       
-        
-        public void SprecheAktiveSequenzAn()
-        {
-            //Array
-            //sequencer.ActiveSequence.PlayedBeats
-            
-           
+  
 
-
-        }
-
-        public void SetSpezificSequenz(object parameter)
-        {
-      
-
-            this.Sequenz = (int)parameter;
-
-            
-            
-        }
-
-        public void ControllerSendCommand(string key)
-        {
-            cController.sendCommand(key);
-        }
-
-        public async Task SetSpezificSchlag(object parameter)
-        {
-            Debugger.Break();
-            this.Schlag = (int)parameter;
-
-         //   await Task.Run(SelectSchlag);
-
-         //  controller.turnAccent(this.Sequenz, this.Schlag);
-        }
 
         #endregion
 
@@ -406,36 +378,6 @@ namespace CrystalBeats
         {
             get { return mAktIndex; }
             set { mAktIndex = value; onPropertyChanged("aktIndex"); }
-        }
-
-        void Stuff()
-        {
-
-            #region Controller
-            //Input: BeatArray + Position, wenn Null Farbe Grau ansonsten Farbe Lila
-            //controller.enableVisuals
-
-            //Einmaliges Abspielen der Sequenz
-            //controller.PlayOnce
-
-
-            //Sequenz & Sequenzer
-            //controller.setActiveBar
-
-            //OpenFileDialog
-            //controller.setSoundFromFile
-
-            //Ändert Schlag
-            //controller.turnAccent
-
-            //Ändert Farbe Schlag
-            //controller.turnColor
-
-            //Ändere Sequenz
-            //controller.turnSequence
-            #endregion
-
-            
         }
 
 

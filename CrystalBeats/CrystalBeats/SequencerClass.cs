@@ -81,6 +81,7 @@ namespace CrystalBeats
         public Sequence[] aSequences
         {
             get { return sqSequences; }
+            set { sqSequences = value; }
         }
     }
 

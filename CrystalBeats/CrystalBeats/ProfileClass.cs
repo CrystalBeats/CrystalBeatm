@@ -149,5 +149,14 @@ namespace CrystalBeats
                 bar.Rested = rest;
             }
         }
+
+        public Sequence[] pSequences
+        {
+            get { return bars; }
+            set
+            {
+                bars = value;
+            }
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace CrystalBeats
             saveProfile(saveto);*/
         }
         // Getter setter accentedbeats
-        public int[] getAccentedBeats(int bar) { return bars[bar].PlayedBeats}
+        public int[] getAccentedBeats(int bar) { return bars[bar].PlayedBeats; }
         public void setAccentedBeats(SharpConfig.Section[] sections)
         {
             // Loop bars

@@ -279,6 +279,8 @@ namespace CrystalBeats
 
             this.NameProfil = "Aktuelles Profil: " + Path.GetFileName( cController.pProfile.mprofilename);
 
+            ActivateSequenz((short)this.Sequenz);
+
         }
 
         public void speichereProfil()

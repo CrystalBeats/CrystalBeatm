@@ -133,7 +133,6 @@ namespace CrystalBeats
                     strField = state.Offset.ToString();
                     if (state.Value == 128) ((ViewModel)(this.DataContext)).cController.sendCommand(strField);
                 }
-
             }
         }
 

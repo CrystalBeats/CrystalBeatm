@@ -11,8 +11,8 @@ namespace CrystalBeats
 {
     public class ProfileClass
     {
-        string soundactive, activeprofile;
         private Sequence[] bars = new Sequence[8];
+        public string mprofilename;
         // 8 bars x 16 beats
         int[,] accentedBeats = new int[,] {
             {  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -25,7 +25,6 @@ namespace CrystalBeats
             {  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
         };
 
-        string path, profilepath;
         // Temporärer Pfad
         string presetprofile = @"..\..\..\Profiles\presetprofile.ini";
         Configuration config = new Configuration();
@@ -72,6 +71,7 @@ namespace CrystalBeats
         public void loadProfile(string profile)
         {
             config = Configuration.LoadFromFile(profile);
+            mprofilename = config["General"]["name"].StringValue;
             var sectionG = config["General"];
             SharpConfig.Section[] sections = new SharpConfig.Section[] {
                 config["Korg1"],
@@ -93,9 +93,10 @@ namespace CrystalBeats
             setAccentedBeats(sections);
 
         }
-        public void saveProfile(string filetosave)
+        public void saveProfile(string filetosave, string profilename)
         {
             config = Configuration.LoadFromFile(presetprofile);
+            config["General"]["name"].StringValue = profilename;
             config["General"]["bpm"].IntValue = bars[1].BPM;
             // Save Bars
             for(int i = 0; i < bars.Length; i++)

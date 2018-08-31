@@ -45,7 +45,7 @@ namespace CrystalBeats
             this.DataContext = new ViewModel();
             tHopScotch.Period = 5;
             tHopScotch.Resolution = 999999999;
-InitiallizeGamePad();
+            InitiallizeGamePad();
         }
 
         private void tHopScotch_Tick(object sender, EventArgs e)
@@ -94,7 +94,7 @@ InitiallizeGamePad();
             if (joystickGuid == Guid.Empty)
             {
 
-                MessageBox.Show("No joystick/Gamepad found.");
+                MessageBox.Show("HopScotch Matte nicht gefunden! ");
 
             }
             else

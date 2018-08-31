@@ -277,7 +277,7 @@ namespace CrystalBeats
 
             cController.loadProfile();
 
-            
+            this.NameProfil = "Aktuelles Profil: " + Path.GetFileName( cController.pProfile.mprofilename);
 
         }
 
@@ -285,6 +285,7 @@ namespace CrystalBeats
         {
 
             cController.saveProfile();
+            
 
         }
 

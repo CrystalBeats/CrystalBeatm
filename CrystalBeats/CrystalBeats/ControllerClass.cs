@@ -20,6 +20,9 @@ namespace CrystalBeats
 
         public Sequencer sqSequencer;
         public ProfileClass pProfile;
+
+        public string strSaveName;
+
         public Controller()
         {
 
@@ -27,6 +30,7 @@ namespace CrystalBeats
 
             pProfile = new ProfileClass(sqSequencer.aSequences);
 
+            this.strSaveName = String.Empty;
         }
 
         public void turnSequence(int iSequence)
@@ -44,7 +48,7 @@ namespace CrystalBeats
         public void saveProfile()
         {
             pProfile.pSequences = sqSequencer.aSequences;
-            pProfile.saveProfile(SaveFileName());
+            pProfile.saveProfile(SaveFileName(), this.strSaveName);
         }
 
         public void enableVisuals(Sequence seq, List<Sequence> seqCol, Sequencer Sequencer)
@@ -75,7 +79,15 @@ namespace CrystalBeats
         public string SaveFileName()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-                return (saveFileDialog.ShowDialog() == true) ? saveFileDialog.FileName : "";
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+
+                this.strSaveName = saveFileDialog.FileName;
+                return this.strSaveName;
+
+            } else { return ""; }
+                
         }
 
         public SolidColorBrush turnColor(int iSequence, int iAccent)

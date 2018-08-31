@@ -177,8 +177,8 @@ namespace CrystalBeats
             SequenzKommand = new RelayParameterizedCommand((parameter) => ActivateSequenz(parameter));
             SelectSequenzKommand = new RelayParameterizedCommand(parameter => SetSequenz(parameter));
             NewProfile = new RelayCommand(() => neuesProfil());
-            //SaveProfile = new RelayCommand(() => speichereProfil());
-            //LoadProfile = new RelayCommand(() => ladeProfil());
+            SaveProfile = new RelayCommand(() => speichereProfil());
+            LoadProfile = new RelayCommand(() => ladeProfil());
 
       //      SelectSoundParameter = new RelayParameterizedCommand((parameter) => SetSpezificSequenz(parameter));
             SelectSchlag = new RelayParameterizedCommand(parameter => ActivateTurnAccent(parameter));
@@ -259,6 +259,9 @@ namespace CrystalBeats
         public void neuesProfil()
         {
        //     profile = new ProfileClass();
+
+  
+
         }
 
         public void ladeProfil()
@@ -267,40 +270,23 @@ namespace CrystalBeats
             //OpenFileDialog openFileDialog = new OpenFileDialog();
             //openFileDialog.Multiselect = false;
             //openFileDialog.Filter = "*.xml, *.*";
-            //if (openFileDialog.ShowDialog() == true) { 
-            //aktprofile.loadProfile(openFileDialog.FileName);
+            //if (openFileDialog.ShowDialog() == true)
+            //{
+            //    aktprofile.loadProfile(openFileDialog.FileName);
             //}
 
-//            cController.ladeProfil();
+            cController.loadProfile();
+
+            this.NameProfil = "Aktuelles Profil: " + Path.GetFileName( cController.pProfile.mprofilename);
 
         }
 
         public void speichereProfil()
         {
-            // Name für Profil und Ort für Profil
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            string name;
 
-            InputBox akt_input = new InputBox();
+            cController.saveProfile();
+            
 
-            akt_input.ShowDialog();
-
-            if (akt_input.DialogResult == true)
-            {
-                name = akt_input.inputString;
-            }
-
-            //profile.saveProfile(name);
-
-            //string profilename = Microsoft.VisualBasic.Interaction.InputBox("Prompt", "Title", "Default", -1, -1);
-
-            //if (.Show() == true)
-            //{
-            //
-            //}
-            //
-            //if (saveFileDialog.ShowDialog() == true)
-            //aktprofile.saveProfile();
         }
 
         void ActivateSequenz(object parameter)
@@ -316,11 +302,14 @@ namespace CrystalBeats
             this.AktTitle = Path.GetFileName(cController.sqSequencer.ActiveSequence.Soundname);
             this.AktBPM = "Aktuelle BPM: " + cController.sqSequencer.BPM.ToString();
 
+
         }
 
 
        public void ActivateSequenz(object parameter, bool ActiveSequenz = true)
         {
+
+            
 
             SetSequenz(parameter, false);
 

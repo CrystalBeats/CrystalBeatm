@@ -17,12 +17,12 @@ namespace CrystalBeats
 {
     public class Controller
     {
-        string strKey;
+
         public Sequencer sqSequencer;
-        ProfileClass pProfile;
+        private ProfileClass pProfile;
         public Controller()
         {
-            strKey = "";
+
             sqSequencer = new Sequencer();
 
             pProfile = new ProfileClass(sqSequencer.aSequences);
@@ -89,7 +89,6 @@ namespace CrystalBeats
 
         public void sendCommand(string strCommand)
         {
-            string asd = "";
             switch(strCommand)
             {
                 case ("Buttons6"): //HopScotch Feld wie in Array

@@ -24,7 +24,7 @@ namespace CrystalBeats
             colSequences = new List<Sequence>();
             sqActiveSequence = new Sequence("");
 
-            sqSequences = new Sequence[] {new Sequence("Bar1"), new Sequence("Bar2"), new Sequence("Bar3"), new Sequence("Bar4"), new Sequence("Bar5"), new Sequence("Bar6"), new Sequence("Bar7"), new Sequence("Bar8") };
+            sqSequences = new Sequence[] { new Sequence("Bar1"), new Sequence("Bar2"), new Sequence("Bar3"), new Sequence("Bar4"), new Sequence("Bar5"), new Sequence("Bar6"), new Sequence("Bar7"), new Sequence("Bar8") };
 
             sqActiveSequence = sqSequences[0];
             syncBPM();
@@ -32,7 +32,7 @@ namespace CrystalBeats
 
         public void Play()
         {
-            for(int i = 0; i <sqSequences.Length -1; i++)
+            for (int i = 0; i < sqSequences.Length - 1; i++)
             {
                 sqSequences[i].Start();
             }
@@ -40,7 +40,7 @@ namespace CrystalBeats
 
         public void Stop()
         {
-            for (int i = 0; i < sqSequences.Length -1; i++)
+            for (int i = 0; i < sqSequences.Length - 1; i++)
             {
                 sqSequences[i].Stop();
             }
@@ -87,7 +87,7 @@ namespace CrystalBeats
     public class Sequence
     {
         private string strSoundslot;
-        private int iDB;
+        private float fDB;
         private int iBPM;
         private bool bRested;
         private bool bVisible;
@@ -115,7 +115,7 @@ namespace CrystalBeats
             this.tTimer.Mode = TimerMode.Periodic;
             this.tTimer.Tick += new EventHandler(this.tTimer_Tick);
 
-            this.iDB = 15;
+            this.fDB = 0.1f;
             this.iBPM = 160;
             this.iCounter = 1;
             this.iBeatsPerSequence = 16;
@@ -198,7 +198,7 @@ namespace CrystalBeats
                     sePlayer.StopAllSounds();
                     sePlayer.Play2D(strSoundslot);
                 }
-                
+
             }
             iCounter++;
         }
@@ -241,14 +241,14 @@ namespace CrystalBeats
             }
         }
 
-        public int DB
+        public float DB
         {
-            get { return iDB; }
+            get { return fDB; }
             set
             {
                 if (value > 0)
                 {
-                    iDB = value;
+                    fDB = value;
                     sePlayer.SoundVolume = value;
                     sePlayer.Update();
                 }
@@ -315,22 +315,23 @@ namespace CrystalBeats
         public int ActualBeat
         {
             get { return iCounter; }
-    }
-
-    public class Accent
-    {
-        private bool bPlayed;
-        public Accent()
-        {
-            bPlayed = false;
         }
 
-        public bool Played
+        public class Accent
         {
-            get { return bPlayed; }
-            set
+            private bool bPlayed;
+            public Accent()
             {
-                bPlayed = !bPlayed;
+                bPlayed = false;
+            }
+
+            public bool Played
+            {
+                get { return bPlayed; }
+                set
+                {
+                    bPlayed = !bPlayed;
+                }
             }
         }
     }

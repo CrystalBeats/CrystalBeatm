@@ -26,7 +26,7 @@ namespace CrystalBeats
         };
 
         // Temporärer Pfad
-        string presetprofile = @"..\..\..\Profiles\presetprofile.ini";
+        string presetprofile = @"Profiles\presetprofile.ini";
         Configuration config = new Configuration();
         
         // Constructor

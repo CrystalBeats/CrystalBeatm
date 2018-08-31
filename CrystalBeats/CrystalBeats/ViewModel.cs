@@ -260,7 +260,7 @@ namespace CrystalBeats
         {
        //     profile = new ProfileClass();
 
-            cController.new
+  
 
         }
 
@@ -275,9 +275,9 @@ namespace CrystalBeats
             //    aktprofile.loadProfile(openFileDialog.FileName);
             //}
 
-            cController.ladeProfil();
+            cController.loadProfile();
 
-
+            
 
         }
 

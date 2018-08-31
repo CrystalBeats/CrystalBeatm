@@ -136,7 +136,7 @@ namespace CrystalBeats
             for (int i = 0; i < bars.Length; i++)
             {
                 Sequence bar = bars[i];
-                int volume = sections[i]["db"].IntValue;
+                float volume = sections[i]["db"].FloatValue;
                 bar.DB = volume;
             }
         }

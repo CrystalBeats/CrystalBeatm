@@ -34,17 +34,17 @@ namespace CrystalBeats
             sqSequencer.aSequences[iSequence].Rested = !sqSequencer.aSequences[iSequence].Rested;
         }
 
-        public void loadProfile(string strProfile)
+        public void loadProfile()
         {
-            pProfile.loadProfile(strProfile);
+            pProfile.loadProfile(OpenFileName());
 
             sqSequencer.aSequences = pProfile.pSequences;
         }
 
-        public void saveProfile(string strSavePath)
+        public void saveProfile()
         {
             pProfile.pSequences = sqSequencer.aSequences;
-            pProfile.saveProfile(strSavePath);
+            pProfile.saveProfile(SaveFileName());
         }
 
         public void enableVisuals(Sequence seq, List<Sequence> seqCol, Sequencer Sequencer)
@@ -64,6 +64,18 @@ namespace CrystalBeats
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             sqSequencer.aSequences[iSequence].Soundname = (openFileDialog.ShowDialog() == true) ? openFileDialog.FileName : "";
+        }
+
+        public string OpenFileName()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            return (openFileDialog.ShowDialog() == true) ? openFileDialog.FileName : "";
+        }
+
+        public string SaveFileName()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+                return (saveFileDialog.ShowDialog() == true) ? saveFileDialog.FileName : "";
         }
 
         public SolidColorBrush turnColor(int iSequence, int iAccent)
@@ -131,35 +143,42 @@ namespace CrystalBeats
                 case ("1"): //HopScotch Feld wie in Array
                     sqSequencer.aSequences[0].PlaySound();
                     sqSequencer.setActiveSequence(0);
-                    ((ViewModel)((MainWindow)Application.Current.MainWindow).DataContext).
+                    ((ViewModel)((MainWindow)Application.Current.MainWindow).DataContext).ActivateSequenz((short)0, false);
                     break;
                 case "2":
                     sqSequencer.aSequences[1].PlaySound();
                     sqSequencer.setActiveSequence(1);
+                    ((ViewModel)((MainWindow)Application.Current.MainWindow).DataContext).ActivateSequenz((short)1, false);
                     break;
                 case "3":
                     sqSequencer.aSequences[2].PlaySound();
                     sqSequencer.setActiveSequence(2);
+                    ((ViewModel)((MainWindow)Application.Current.MainWindow).DataContext).ActivateSequenz((short)2, false);
                     break;
                 case "4":
                     sqSequencer.aSequences[3].PlaySound();
                     sqSequencer.setActiveSequence(3);
+                    ((ViewModel)((MainWindow)Application.Current.MainWindow).DataContext).ActivateSequenz((short)3, false);
                     break;
                 case "5":
                     sqSequencer.aSequences[4].PlaySound();
                     sqSequencer.setActiveSequence(4);
+                    ((ViewModel)((MainWindow)Application.Current.MainWindow).DataContext).ActivateSequenz((short)4, false);
                     break;
                 case "6":
                     sqSequencer.aSequences[5].PlaySound();
                     sqSequencer.setActiveSequence(5);
+                    ((ViewModel)((MainWindow)Application.Current.MainWindow).DataContext).ActivateSequenz((short)5, false);
                     break;
                 case "7":
                     sqSequencer.aSequences[6].PlaySound();
                     sqSequencer.setActiveSequence(6);
+                    ((ViewModel)((MainWindow)Application.Current.MainWindow).DataContext).ActivateSequenz((short)6, false);
                     break;
                 case "8":
                     sqSequencer.aSequences[7].PlaySound();
                     sqSequencer.setActiveSequence(7);
+                    ((ViewModel)((MainWindow)Application.Current.MainWindow).DataContext).ActivateSequenz((short)7, false);
                     break;
                 case "p":
                     PauseBar();

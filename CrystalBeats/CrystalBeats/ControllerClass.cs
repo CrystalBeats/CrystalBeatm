@@ -117,7 +117,7 @@ namespace CrystalBeats
             get
             {
                 int x = 0;
-                for (int i = 0; i<sqSequencer.aSequences.Length -1; i++)
+                for (int i = 0; i<sqSequencer.aSequences.Length; i++)
                 {
                     x = (sqSequencer.aSequences[i].Name == sqSequencer.ActiveSequence.Name) ? i : x;
                 }

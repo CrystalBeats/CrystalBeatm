@@ -32,7 +32,7 @@ namespace CrystalBeats
 
         public void Play()
         {
-            for (int i = 0; i < sqSequences.Length - 1; i++)
+            for (int i = 0; i < sqSequences.Length; i++)
             {
                 sqSequences[i].Start();
             }
@@ -40,7 +40,7 @@ namespace CrystalBeats
 
         public void Stop()
         {
-            for (int i = 0; i < sqSequences.Length - 1; i++)
+            for (int i = 0; i < sqSequences.Length; i++)
             {
                 sqSequences[i].Stop();
             }
@@ -58,7 +58,7 @@ namespace CrystalBeats
 
         private void syncBPM()
         {
-            for (int i = 0; i < sqSequences.Length - 1; i++)
+            for (int i = 0; i < sqSequences.Length; i++)
             {
                 sqSequences[i].BPM = iBPM;
             }

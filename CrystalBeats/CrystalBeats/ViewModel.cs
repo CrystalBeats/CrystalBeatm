@@ -175,7 +175,7 @@ namespace CrystalBeats
             CloseCommand = new RelayCommand(() => ((MainWindow)(Application.Current.MainWindow)).Close());
 
             SequenzKommand = new RelayParameterizedCommand((parameter) => ActivateSequenz(parameter));
-            SelectSequenzKommand = new RelayParameterizedCommand(parameter => SetSequenz(parameter));
+            SelectSequenzKommand = new RelayParameterizedCommand((parameter) => SetSequenz(parameter));
             NewProfile = new RelayCommand(() => neuesProfil());
             SaveProfile = new RelayCommand(() => speichereProfil());
             LoadProfile = new RelayCommand(() => ladeProfil());
